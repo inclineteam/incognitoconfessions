@@ -9,7 +9,7 @@
     </head>
     <body class="bg-[#1B1C21] flex h-[250vh] flex-col">
         <div >
-            <!-- Content -->
+            <!-- Header -->
             <header>
 
                 <div class="flex justify-center overflow-hidden">
@@ -28,7 +28,7 @@
                     <img src="/images/background.png"  alt="background"/>
                 </div>
 
-                <div class="flex justify-center items-center h-[30rem]">
+                <div class="flex justify-center flex-col items-center h-[35rem]">
 
                     <div class="flex items-center flex-col">
 
@@ -43,9 +43,24 @@
                         <p class="text-white text-xl font-inter tracking-wide p-6 font-normal">Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat.</p>
 
                     </div>
+                    <div class="flex flex-row items-center justify-center h-[9rem]">
+                        <p class="text-white opacity-60 text-md p-6">How does it work ?</p>
+                        <button class="bg-[#3B50F9] text-white font-medium text-[1.1rem] p-4 w-[15rem]">Write a Confession</button>
+                    </div>
                 </div>
 
             </header>
+
+            <main>
+                <!-- Content Random Selected Letters -->
+
+            </main>
+
+
+            <footer>
+                 <!-- Incline Team Copyright -->
+
+            </footer>
 
 
         </div>
