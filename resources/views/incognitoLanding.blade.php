@@ -8,7 +8,7 @@
 
     </head>
     <body>
-        <div class="bg-[#1B1C21] flex h-[100vh] flex-col">
+        <div class="bg-[#1B1C21] flex h-[100vh] w-[100vw] flex-col">
             <!-- Content -->
             <header>
                 <div class="flex justify-center">
