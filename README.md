@@ -5,7 +5,7 @@ A laravel test build by Incline Start-up Agency. Testing Git and framework funct
 
 A laravel starter for future team project. Anyone is open to use this laravel template for personal and commercial use.
 
-##Getting Started
+## Getting Started
 
 ### Dependencies
 
