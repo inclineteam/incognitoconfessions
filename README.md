@@ -1,5 +1,5 @@
 # Incognito-Confessions
-A laravel test build by Incline Start-up Agency. Testing Git and framework functions.
+A laravel build by Incline Start-up Agency. Testing Git and framework functions.
 
 ## Description
 
