@@ -5,11 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Incognito</title>
         @vite('resources/css/app.css')
-
     </head>
+
     <body class="bg-[#1B1C21] flex h-[250vh] flex-col">
-        <div >
-            <!-- Header -->
+        <div>
+
+            <!-- Header Incognito Landing -->
             <header>
 
                 <div class="flex justify-center overflow-hidden">
@@ -32,7 +33,7 @@
 
                     <div class="flex items-center flex-col">
 
-                        <h1 class="tracking-wider w-[57rem] text-center font-inter font-semibold text-white text-[60px] leading-[6.4rem]">Confess 
+                        <h1 class="font-extrabold tracking-wider w-[57rem] text-center font-inter font-semibold text-white text-[60px] leading-[6.4rem]">Confess 
                             <span class="text-[#FFFBD7] bg-[#292A2F] p-3 rounded-lg">without</span> them <span class="text-[#FFFBD7] bg-[#292A2F] p-2 rounded-lg">having to know</span> who you are
                         </h1>
 
@@ -43,23 +44,34 @@
                         <p class="text-white text-xl font-inter tracking-wide p-6 font-normal">Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat.</p>
 
                     </div>
+
+                    <!-- Redirect to confession creation page -->
                     <div class="flex flex-row items-center justify-center h-[9rem]">
                         <p class="text-white opacity-60 text-md p-6">How does it work ?</p>
-                        <button class="bg-[#3B50F9] text-white font-medium text-[1.1rem] p-4 w-[15rem]">Write a Confession</button>
+                        <button class="bg-[#3B50F9] text-white font-medium text-[1.1rem] p-4 w-[15rem] ">Write a Confession</button>
                     </div>
+                    
                 </div>
 
             </header>
 
+            <!-- Content Random Selected Letters -->
             <main>
-                <!-- Content Random Selected Letters -->
-
+                <div class="flex h-[150vh]">
+                    <!-- Fetch letters 10 messages from database -->
+                </div>
+                
+                <!-- Redirect to confessions page -->
+                <div class="flex items-center justify-center">
+                    <button class="bg-[#3B50F9] text-white font-medium text-[1.1rem] p-4 w-[15rem] ">View all Confessions</button>
+                </div>
             </main>
 
-
-            <footer>
-                 <!-- Incline Team Copyright -->
-
+            <!-- Incline Team Copyright -->
+            <footer class="flex items-end justify-center h-[18rem]">
+                <div>
+                    <p class="text-white text-center font-inter text-sm p-3">&copy; 2020 Incline Team</p>
+                </div>
             </footer>
 
 
