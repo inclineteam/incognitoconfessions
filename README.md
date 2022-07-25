@@ -16,14 +16,15 @@ A laravel starter for future team project. Anyone is open to use this laravel te
 
 ### Installation
 
--   Run `npm install` to install dependencies
--   Run `npm run dev` to start laravel
--   Run `php artisan serve` to start the localhost
+* Run ```npm install``` to install dependencies
+* Run ```npm run dev``` to start laravel
+* Run ```php artisan serve``` to start the localhost
 
 ## Authors
 
--   Percival Ian Muico
--   Ishmael Cascabel
+* Percival Ian Muico
+* Ishmael Cascabel
+* John Aeron Sencil
 
 ## Version History
 
@@ -41,5 +42,5 @@ This project is licensed under the General Public License - see the LICENSE.md f
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
-
--   [Ishmael Casky](https://github.com/IshmaelCasky)
+* [Ishmael Casky](https://github.com/IshmaelCasky)
+* [John Aeron Sencil](https://github.com/iamaeron)
