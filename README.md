@@ -17,7 +17,7 @@ A laravel starter for future team project. Anyone is open to use this laravel te
 
 * Run ```npm install``` to install dependencies
 * Run ```npm run dev``` to start laravel
-* Run ```php artisan start``` to start the localhost
+* Run ```php artisan serve``` to start the localhost
 
 ## Authors
 
