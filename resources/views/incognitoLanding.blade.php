@@ -32,7 +32,7 @@
 
                     <div class="flex items-center flex-col">
 
-                        <h1 class="tracking-wider w-[57rem] text-center font-inter font-semibold text-white text-[60px] leading-[6.4rem]">Confess 
+                        <h1 class="font-extrabold tracking-wider w-[57rem] text-center font-inter font-semibold text-white text-[60px] leading-[6.4rem]">Confess 
                             <span class="text-[#FFFBD7] bg-[#292A2F] p-3 rounded-lg">without</span> them <span class="text-[#FFFBD7] bg-[#292A2F] p-2 rounded-lg">having to know</span> who you are
                         </h1>
 
@@ -45,7 +45,7 @@
                     </div>
                     <div class="flex flex-row items-center justify-center h-[9rem]">
                         <p class="text-white opacity-60 text-md p-6">How does it work ?</p>
-                        <button class="bg-[#3B50F9] text-white font-medium text-[1.1rem] p-4 w-[15rem]">Write a Confession</button>
+                        <button class="bg-[#3B50F9] text-white font-medium text-[1.1rem] p-4 w-[15rem] ">Write a Confession</button>
                     </div>
                 </div>
 
