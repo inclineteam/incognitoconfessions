@@ -28,6 +28,9 @@ A laravel starter for future team project. Anyone is open to use this laravel te
 
 ## Version History
 
+-   0.3
+    -   Added card components
+    -   Changed default landing page
 -   0.2
     -   Laravel framework installation
     -   Tailwind CSS installation
