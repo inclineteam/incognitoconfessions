@@ -1,4 +1,5 @@
 <x-layout>
+<!--test-->
     <div class="h-auto min-h-screen bg-[#1B1C21]">
         <div class="mx-auto max-w-[1400px]">
             <div class="bg-img relative bg-[top_right] bg-no-repeat">
