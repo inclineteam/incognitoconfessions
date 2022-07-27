@@ -10,7 +10,6 @@ class landingconfessionsController extends Controller
     public function index(){
         // query first 15 confessions
         $confessions = Confessions::orderBy('id', 'desc')->take(15)->get();
-        
         return view('pages.landing', ["confessions" => $confessions]);
     }
 }

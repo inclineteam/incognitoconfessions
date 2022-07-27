@@ -7,7 +7,7 @@
         <div class="relative mx-auto max-w-6xl columns-3 gap-6">
             
             @foreach ($confessions as $confession)
-                <x-landing.confession-card :confession="$confession"/>
+                <x-landing.confession-card :confession="$confession" :date="Carbon\Carbon::parse($confession->created_at)->format('m/d/y')"/>
             @endforeach
 
         </div>
