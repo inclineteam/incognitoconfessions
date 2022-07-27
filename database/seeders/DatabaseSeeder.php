@@ -24,6 +24,6 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         //temporary solution to seed data
-        Confessions::factory(15)->create();
+        Confessions::factory(20)->create();
     }
 }
