@@ -7,7 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title }}</title>
-   <link rel="shortcut icon" href="{{ asset('images/ai-glass.png') }}" type="image/x-icon">
+    <script defer src="https://unpkg.com/@alpinejs/persist@3.10.3/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <link rel="shortcut icon" href="{{ asset('images/ai-glass.png') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -17,7 +19,13 @@
 </head>
 
 <body class="antialiased">
+    <x-flash-message />
+
     {{ $slot }}
+
+    <x-footer />
+
+    @yield('script')
 </body>
 
 </html>

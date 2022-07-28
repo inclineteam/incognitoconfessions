@@ -41,4 +41,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // one to many relationship
+    // one user can have many confessions
+    public function confessions()
+    {
+        return $this->hasMany(Confession::class);
+    }
 }
