@@ -12,7 +12,7 @@
         @endif
     
     </div>
-    <div class="text-white justify-center flex w-[100%]">
+    <div class="text-white justify-center flex w-[100%] p-3">
         {{ $confessions->links('vendor.pagination.custom') }}
     </div>
 </div>
