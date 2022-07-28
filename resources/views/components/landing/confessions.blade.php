@@ -5,10 +5,14 @@
         <div class="absolute top-0 right-0 h-20 w-96 bg-gradient-to-b from-[#1B1C21]/0 to-[#1B1C21]"></div>
 
         <div class="relative mx-auto max-w-6xl columns-3 gap-6">
+
+            @if (count($confessions) > 0)
             
-            @foreach ($confessions as $confession)
-                <x-landing.confession-card :confession="$confession" :date="Carbon\Carbon::parse($confession->created_at)->format('m/d/y')"/>
-            @endforeach
+                @foreach ($confessions as $confession)
+                    <x-landing.confession-card :confession="$confession" :date="Carbon\Carbon::parse($confession->created_at)->format('m/d/y')"/>
+                @endforeach
+                
+            @endif
 
         </div>
 
