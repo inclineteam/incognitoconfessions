@@ -1,5 +1,5 @@
 <div x-show="modal" @click="modal = false"
-    class="fixed inset-0 z-40 flex h-auto min-h-screen justify-center overflow-y-auto bg-black/90 pt-20" x-cloak>
+    class="fixed inset-0 z-40 flex h-auto min-h-screen justify-center items-center overflow-y-auto bg-black/90 pt-20" x-cloak>
     <div onclick="event.stopPropagation()" x-show="modal" class="h-max w-full max-w-4xl rounded-lg bg-[#1B1C21] shadow-xl"
         x-transition.duration.250ms>
         <header class="px-8 pt-6 text-2xl font-semibold text-white/80">Sign in</header>
