@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="h-auto min-h-screen bg-[#1B1C21]">
+    <div id="data-holder" x-data="{ modal: $persist(false) }" class="h-auto min-h-screen bg-[#1B1C21]">
         <div class="mx-auto max-w-[1400px]">
             <div class="bg-img relative bg-[top_right] bg-no-repeat">
                 <div
@@ -13,5 +13,7 @@
             <x-landing.confessions :confessions="$confessions"/>
             
         </div>
+
+        <x-modal.signin />
     </div>
 </x-layout>
