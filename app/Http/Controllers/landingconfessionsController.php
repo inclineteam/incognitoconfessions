@@ -16,6 +16,7 @@ class landingconfessionsController extends Controller
 
     public function confessions(){
         $confessions = DB::table('confessions')->paginate(15);
+        
         return view('pages.view-confessions-page', ["confessions" => $confessions]);
     }
 }
