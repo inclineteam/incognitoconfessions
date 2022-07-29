@@ -14,6 +14,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/akar-icons-fonts/src/css/akar-icons.css">
     @vite('resources/css/app.css')
+
 </head>
 
 <body class="antialiased">

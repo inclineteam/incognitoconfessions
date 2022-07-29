@@ -7,8 +7,8 @@
             <span class="font-semibold">Incognito</span>
         </a>
         <nav class="space-x-10">
-            <a href="#about" class="font-medium">About</a>
-            <a href="#confessions" class="rounded bg-[#292A2F] py-3 px-4 font-medium">Confessions</a>
+            <a href="about" class="font-medium">About</a>
+            <a href="confessions" class="rounded bg-[#292A2F] py-3 px-4 font-medium">Confessions</a>
         </nav>
     </div>
 </header>
