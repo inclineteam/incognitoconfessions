@@ -4,6 +4,45 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .bg-img {
   background-image: url('../../public/images/Rectangle1.png');
 }
+
+.input-focus-styles { 
+  @apply border border-transparent focus-within:border-primary;
+}
+
+.input-error-border {
+  @apply border border-red-500/50 focus-within:border-primary;
+}
+
+.checkbox-input:checked ~ .custom-checkbox {
+  @apply !text-sky-400 !border-sky-500/30;
+}
+
+.form-control-errmsg {
+  @apply absolute top-full left-1/2 mt-4 w-full w-max -translate-x-1/2 scale-0 rounded bg-black/70 z-20 p-3 text-center text-sm text-white/70 before:absolute before:bottom-full before:left-1/2 before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-4 before:border-b-4 before:border-transparent before:border-b-black/60 before:content-['_'] group-focus-within:scale-100
+}
+
+.bg-img {
+  background-image: url('../../public/images/background.png');
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B8C8E;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1B1C21;
+}
+
+[x-cloak] { display: none !important; }
