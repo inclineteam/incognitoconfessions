@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\landingconfessionsController;
+use App\Models\Confessions;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,15 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    return view('pages.landing');
-})->middleware('guest');
+Route::get('/', [landingconfessionsController::class, "index"])->middleware("guest");
 
 Route::get('/home', function () {
     return view('pages.home');
 })->name('home');
 
 require __DIR__ . '/auth.php';
-=======
-Route::get('/', [landingconfessionsController::class, "index"]);
-Route::get('/confessions', [landingconfessionsController::class, "confessions"]);
+Route::get('/confessions', [landingconfessionsController::class, "confessions"])->name('confessions');
