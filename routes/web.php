@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\landingconfessionsController;
+use App\Models\Confessions;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,4 @@ Route::get('/home', function () {
 })->name('home');
 
 require __DIR__ . '/auth.php';
-Route::get('/confessions', [landingconfessionsController::class, "confessions"]);
+Route::get('/confessions', [landingconfessionsController::class, "confessions"])->name('confessions');
