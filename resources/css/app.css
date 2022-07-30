@@ -9,7 +9,7 @@ html {
 }
 
 .bg-img {
-  background-image: url('../../public/images/Rectangle1.png');
+  background-image: url('../../public/images/background.png');
 }
 
 .input-focus-styles { 
@@ -29,7 +29,7 @@ html {
 }
 
 .bg-img {
-  background-image: url('../../public/images/background.png');
+  background-image: url('../../public/images/Rectangle1.png');
 }
 
 ::-webkit-scrollbar {
