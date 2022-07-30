@@ -9,7 +9,7 @@ html {
 }
 
 .bg-img {
-  background-image: url('../../public/images/Rectangle1.png');
+  background-image: url('../../public/images/background.png');
 }
 
 .input-focus-styles { 
@@ -29,8 +29,9 @@ html {
 }
 
 .bg-img {
-  background-image: url('../../public/images/background.png');
+  background-image: url('../../public/images/Rectangle1.png');
 }
+<<<<<<< HEAD
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -46,3 +47,5 @@ html {
 }
 
 [x-cloak] { display: none !important; }
+=======
+>>>>>>> parent of 4dbb4c7 (update)

@@ -21,5 +21,4 @@ Route::get('/home', function () {
 })->name('home');
 
 require __DIR__ . '/auth.php';
-
 Route::get('/confessions', [landingconfessionsController::class, "confessions"]);
