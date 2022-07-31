@@ -1,21 +1,23 @@
 <div class="flex justify-center">
-    <div class="h-[4rem] w-[72rem] rounded-md flex justify-center items-center">
+    <div class="flex h-[4rem] w-[72rem] items-center justify-center rounded-md">
         <!-- implement search bar -->
-        <div class="bg-[#25262B] w-[70rem] rounded-md opacity-75">
-            <div class="flex items-center w-[100%] justify-evenly h-[100%]">
-                <form class="w-[87%] flex" >
-                    <input type="text" placeholder="Search for a name" class="bg-transparent text-white p-4 w-[100%] select-none opacity-50 font-inter">
-                    <div class="flex justify-center items-center ">
-                        <button type="submit"><img src="images/search.png" class="h-[25px] w-[25px] opacity-50"/></button>
+        <div class="w-[70rem] rounded-md bg-[#25262B] opacity-75">
+            <div class="flex h-[100%] w-[100%] items-center justify-evenly">
+                <form class="flex w-[87%]">
+                    <input type="text" name="search" placeholder="Search for a name"
+                        class="font-inter w-[100%] select-none bg-transparent p-4 text-white opacity-50">
+                    <div class="flex items-center justify-center">
+                        <button type="submit"><img src="images/search.png"
+                                class="h-[25px] w-[25px] opacity-50" /></button>
                     </div>
-                    
+
                 </form>
-                <div class="flex h-[100%] w-[8%] justify-center items-center ">
-                    <img src="images/filter.png" class="w-[64px] h-[22px]">
+                <div class="flex h-[100%] w-[8%] items-center justify-center">
+                    <img src="images/filter.png" class="h-[22px] w-[64px]">
                 </div>
             </div>
-            
+
         </div>
-        
+
     </div>
 </div>

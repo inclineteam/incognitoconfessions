@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Confessions extends Model
 {
     use HasFactory;
+
+    public function scopeFilter($query, array $filters)
+    {
+        if ($filters['search'] ?? false) {
+            $query->where('content', 'like', '%' . request('search') . '%');
+        }
+    }
 }
