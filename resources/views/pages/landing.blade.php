@@ -10,8 +10,8 @@
                     <x-landing.hero />
                 </div>
             </div>
-            <x-landing.confessions :confessions="$confessions"/>
-            
+            <x-landing.confessions :confessions="$confessions" />
+
         </div>
 
         <x-modal.signin />
