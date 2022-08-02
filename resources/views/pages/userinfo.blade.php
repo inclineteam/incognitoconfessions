@@ -19,6 +19,7 @@
                     <img src="images/letter.png" class="h-[33px] w-[33px]">
                     <div class="w-[87%]">
                         <!-- gather all confessions of user -->
+                        <x-user-confessions :confessions="$confessions" />
                         
                     </div>
                     <div class="flex items-end">
