@@ -22,7 +22,7 @@
 
     <div class="flex items-center space-x-10">
         <button class="text-white">How does it work?</button>
-        <button @click="modal = true" class="bg-primary rounded-md px-6 py-4 font-medium text-white">
+        <button @click="modal = true" class="bg-[#3B50F9] rounded-md px-6 py-4 font-medium text-white">
             Write a confession
         </button>
     </div>

@@ -20,10 +20,10 @@
                 </div>
             @endif
         @else
-            <p class="text-center text-3xl text-white/50">No confessions found</p>
+            <p class="text-center text-2xl text-white/50">No confessions found</p>
         @endif
 
-        <div class="flex w-[100%] justify-center text-white">
+        <div class="flex w-[100%] p-5 justify-center text-white">
             {{ $confessions->links('vendor.pagination.custom') }}
         </div>
     </div>

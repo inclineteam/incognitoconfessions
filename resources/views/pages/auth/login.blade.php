@@ -29,7 +29,7 @@
 
         <div class="mt-4 space-y-8">
             <button type="submit"
-                class="bg-primary hover:bg-primary/70 w-full rounded py-3 px-4 font-medium text-white duration-150">
+                class="bg-[#3B50F9] hover:bg-primary/70 w-full rounded py-3 px-4 font-medium text-white duration-150">
                 Continue
             </button>
 

@@ -16,7 +16,7 @@ A laravel starter for future team project. Anyone is open to use this laravel te
 
 ### Installation
 
--   Create an environt file (`.env`)
+-   Create an environt file `.env`
 -   Copy `.env.example`'s content and paste it in the environment file
 -   Run `npm install` to install dependencies
 -   Run `npm run dev` to start laravel
@@ -86,3 +86,4 @@ Inspiration, code snippets, etc.
 
 -   [Ishmael Casky](https://github.com/IshmaelCasky)
 -   [John Aeron Sencil](https://github.com/iamaeron)
+-   [Harold Martin Patacsil](https://github.com/yskooo)
