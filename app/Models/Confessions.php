@@ -12,7 +12,7 @@ class Confessions extends Model
     public function scopeFilter($query, array $filters)
     {
         if ($filters['search'] ?? false) {
-            $query->where('content', 'like', '%' . request('search') . '%');
+            $query->where('content', 'like', '%' . request('search') . '%')->orWhere('name', 'like', '%' . request('search') . '%')->orWhere('to', 'like', '%' . request('search') . '%');
         }
     }
 }

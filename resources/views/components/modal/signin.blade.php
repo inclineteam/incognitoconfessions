@@ -24,7 +24,7 @@
                             me</label>
                     </div>
 
-                    <button type="submit" class="bg-primary w-full rounded py-3 font-medium text-white">
+                    <button type="submit" class="bg-[#3B50F9] w-full rounded py-3 font-medium text-white">
                         Continue
                     </button>
                 </form>

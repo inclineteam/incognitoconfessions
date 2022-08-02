@@ -10,7 +10,6 @@
                         <button type="submit"><img src="images/search.png"
                                 class="h-[25px] w-[25px] opacity-50" /></button>
                     </div>
-
                 </form>
                 <div class="flex h-[100%] w-[8%] items-center justify-center">
                     <img src="images/filter.png" class="h-[22px] w-[64px]">

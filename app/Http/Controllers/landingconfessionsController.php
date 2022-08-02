@@ -17,7 +17,6 @@ class landingconfessionsController extends Controller
     public function confessions()
     {
         $confessions = Confessions::latest()->filter(request(['search']))->paginate(15);
-
         return view('pages.view-confessions-page', ["confessions" => $confessions]);
     }
 }
