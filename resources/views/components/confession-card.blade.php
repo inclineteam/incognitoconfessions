@@ -1,10 +1,10 @@
 @props(["confession" => $confession])
-<div class="flex justify-center ml-5">
+<div class="flex ml-5">
     <div class="flex justify-center w-[90%] bg-[#313131] rounded-lg">
         <p class="text-white text font-semibold p-3">
             {{ $confession->name }}
         </p>
-        <p class="text-white p-3 w-[50%] truncate">
+        <p class="text-white p-4 opacity-40 w-[50%] text-sm  truncate">
             {{ $confession->content }}
         </p>
         <div class="flex justify-end w-[30%]">
