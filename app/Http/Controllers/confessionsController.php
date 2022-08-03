@@ -25,7 +25,8 @@ class confessionsController extends Controller
         $request->validate([
             'name' => 'required',
             'to' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'g-recaptcha-response' => 'required:captcha',
         ]);
 
         $confession = new Confessions();
@@ -48,7 +49,8 @@ class confessionsController extends Controller
         $request->validate([
             'name' => 'required',
             'to' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'g-recaptcha-response' => 'required:captcha',
         ]);
 
         $confession = Confessions::find($id);
