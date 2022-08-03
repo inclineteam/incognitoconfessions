@@ -4,5 +4,6 @@
             <x-confessions.confessions-sidebar />
         </div>
         @yield('content')
+        <x-modal.confess/>
     </div>
 </x-layout>

@@ -1,7 +1,7 @@
 @extends('pages.home')
 @section('content')
 
-<div class="bg-shark flex justify-center h-auto min-h-screen p-6">
+<div id="data-holder" x-data="{ modal: false }" x-init="{ modal = $persist(false) }"  class="bg-shark flex justify-center h-auto min-h-screen p-6">
 
     @if (auth()->user())
 
@@ -19,19 +19,32 @@
                     <img src="images/letter.png" class="h-[33px] w-[33px]">
                     <div class="w-[87%]">
                         <!-- gather all confessions of user -->
+                        <div class="ml-5">
+                            <p class="text-white font-medium py-1 text-lg">Confessions</p>
+                        </div>
                         <x-user-confessions :confessions="$confessions" />
+                        <div class="text-white flex items-end justify-center">
+                            
+                            {{ $confessions->links("pagination::custom") }}
+                            
+                        </div>
+                        
                         
                     </div>
                     <div class="flex items-end">
-                        <button type="submit" class="rounded bg-[#3B50F9] w-[12rem] h-[3rem] text-sm font-normal text-white">
+                        <button type="submit"  @click="modal = true" class="rounded bg-[#3B50F9] w-[12rem] h-[3rem] text-sm font-normal text-white">
                             Create Confession
                         </button>
                     </div>
                 </div>
                 <div class="flex h-[60%] pt-5">
 
-                    <div class="bg-[#161515] w-[30rem] h-[70%] rounded-md mr-5 p-5">
-                        <img src="images/letter.png">
+                    <div class="bg-[#161515] flex w-[30rem] h-[70%] rounded-md mr-5 p-5">
+                        <img src="images/letter.png" class="h-[33px] w-[33px]">
+                        <div class="flex flex-col h-[100%] w-[100%] justify-center items-center">
+                            <p class="text-white text-[3.4rem]">{{ count($confessions) }}</p>
+                            <span class="text-white opacity-40">confessions has been created</span>
+                        </div>
                     </div>
 
                     @if (auth()->user()->email_verified_at != null)
@@ -67,6 +80,8 @@
             <img class="mr-4 opacity-50" src="images/letter.png"> <p class="text-white opacity-50"> You are not logged in  <a href="{{ route('login') }}" class="text-sky-500"> Login now</a></p>
         </div>
     @endif
+
+    <x-modal.confess/>
 
 
 </div>

@@ -19,7 +19,7 @@ Route::get('/', [confessionsController::class, "index"])->middleware("guest");
 
 Route::get('/home', [confessionsController::class, "show"])->name("home");
 
-Route::post('/confessions/create', [confessionsController::class, "create"]);
+Route::post('/confessions/create', [confessionsController::class, "create"])->name('create');
 Route::patch('/confessions/edit/{id}', [confessionsController::class, "update"]);
 
 Route::delete('/confessions/delete/{id}', [confessionsController::class, "destroy"]);
