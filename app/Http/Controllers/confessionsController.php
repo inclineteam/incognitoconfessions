@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Confessions;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Termwind\Components\Dd;
 
 class confessionsController extends Controller
 {
@@ -22,9 +20,22 @@ class confessionsController extends Controller
         return view('pages.view-confessions-page', ["confessions" => $confessions]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        return view('pages.create-confession-page');
+        $request->validate([
+            'name' => 'required',
+            'to' => 'required',
+            'content' => 'required'
+        ]);
+
+        $confession = new Confessions();
+        $confession->name = $request->name;
+        $confession->to = $request->to;
+        $confession->content = $request->content;
+        $confession->userID = auth()->user()->id;
+        $confession->save();
+        return redirect()->route('home');
+
     }
 
     public function destroy($id){
@@ -33,12 +44,29 @@ class confessionsController extends Controller
         return redirect()->route('home');
     }
 
-    public function update(){
+    public function update(Request $request, $id){
+        $request->validate([
+            'name' => 'required',
+            'to' => 'required',
+            'content' => 'required'
+        ]);
 
+        $confession = Confessions::find($id);
+        $confession->name = $request->name;
+        $confession->to = $request->to;
+        $confession->content = $request->content;
+        $confession->userID = auth()->user()->id;
+        $confession->update();
+        return redirect()->route('home');
     }
 
     public function show(){
-        $confessions = Confessions::where("UserID", auth()->user()->id)->paginate(5);
-        return view('pages.userinfo', ["confessions" => $confessions]);
+        if(auth()->user()){
+            $confessions = Confessions::where("UserID", auth()->user()->id)->paginate(4);
+            return view('pages.userinfo', ["confessions" => $confessions]);
+        } else {
+            return view('pages.userinfo', ["confessions" => []]);
+        }
+        
     }
 }

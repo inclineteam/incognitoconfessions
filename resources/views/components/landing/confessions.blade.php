@@ -1,5 +1,3 @@
-<div id="confessions" class="pt-16 pb-56">
-=======
 @props(["confessions" => $confessions])
 
 <div class="-mt-20 pb-56">
