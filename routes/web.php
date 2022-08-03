@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\landingconfessionsController;
+use App\Http\Controllers\confessionsController;
 use App\Models\Confessions;
 use Illuminate\Support\Facades\Route;
 
@@ -15,11 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', [landingconfessionsController::class, "index"])->middleware("guest");
+Route::get('/', [confessionsController::class, "index"])->middleware("guest");
 
-Route::get('/home', function () {
-    return view('pages.userinfo');
-})->name('home');
+Route::get('/home', [confessionsController::class, "show"])->name("home");
+
+Route::post('/confessions/create', [confessionsController::class, "create"]);
+Route::patch('/confessions/edit/{id}', [confessionsController::class, "update"]);
+
+Route::delete('/confessions/delete/{id}', [confessionsController::class, "destroy"]);
 
 require __DIR__ . '/auth.php';
-Route::get('/confessions', [landingconfessionsController::class, "confessions"])->name('confessions');
+Route::get('/confessions', [confessionsController::class, "confessions"])->name('confessions');
