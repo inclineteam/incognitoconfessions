@@ -41,6 +41,10 @@ html {
   border-radius: 9999px;
 }
 
+input:focus {
+  outline:none;
+}
+
 ::-webkit-scrollbar-track {
   background: #1B1C21;
 }

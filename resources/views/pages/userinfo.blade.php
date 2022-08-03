@@ -19,6 +19,7 @@
                     <img src="images/letter.png" class="h-[33px] w-[33px]">
                     <div class="w-[87%]">
                         <!-- gather all confessions of user -->
+                        <x-user-confessions :confessions="$confessions" />
                         
                     </div>
                     <div class="flex items-end">
@@ -66,6 +67,7 @@
             <img class="mr-4 opacity-50" src="images/letter.png"> <p class="text-white opacity-50"> You are not logged in  <a href="{{ route('login') }}" class="text-sky-500"> Login now</a></p>
         </div>
     @endif
+
 
 </div>
 @endsection
