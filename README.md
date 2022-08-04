@@ -114,7 +114,7 @@ php artisan serve
 ## Version History
 -   0.6
     -   Added security ( #Recaptcha )
-    -   Download Letter Image
+    -   Download Confessions Letter Image
     
 -   0.5
     -   Create, Update, and Delete Confessions
