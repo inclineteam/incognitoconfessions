@@ -80,7 +80,7 @@ php composer install
 
 -   Change the name of the database inside the `.env` or create a database called incognito_confessions on your mysql database
 
-# Example
+### Example
 
 ```
 DB_CONNECTION=mysql

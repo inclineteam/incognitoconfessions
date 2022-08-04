@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string("to");
             $table->longText("content");
             $table->string("userID");
+            $table->int("confessions");
+            $table->boolean("banned");
+            $table->date("confession_start");
             $table->timestamps();
         });
     }
