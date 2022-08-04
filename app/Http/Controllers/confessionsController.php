@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Confessions;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class confessionsController extends Controller
 {
@@ -35,6 +36,9 @@ class confessionsController extends Controller
         $confession->content = $request->content;
         $confession->userID = auth()->user()->id;
         $confession->save();
+
+        // add Log
+
         return redirect()->route('home');
 
     }
@@ -42,6 +46,9 @@ class confessionsController extends Controller
     public function destroy($id){
         $confession = Confessions::find($id);
         $confession->delete();
+
+        // add Log
+
         return redirect()->route('home');
     }
 
@@ -59,6 +66,9 @@ class confessionsController extends Controller
         $confession->content = $request->content;
         $confession->userID = auth()->user()->id;
         $confession->update();
+
+        // add Log
+
         return redirect()->route('home');
     }
 
