@@ -112,7 +112,16 @@ php artisan serve
 -   John Aeron Sencil
 
 ## Version History
+-   0.6
+    -   Added security ( #Recaptcha )
+    
+-   0.5
+    -   Create, Update, and Delete Confessions
 
+-   0.4
+    -   Authentication
+    -   Added Home Dashboard and Confessions Page
+    -   Search bar
 -   0.3
     -   Added card components
     -   Changed default landing page
