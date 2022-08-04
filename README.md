@@ -69,7 +69,7 @@ NOCAPTCHA_SITEKEY=<site-key>
 -   Then run this command
 
 ```
-php composer install
+composer install
 ```
 
 -   Then youre ready to go

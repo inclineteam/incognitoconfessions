@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('logs', function (Blueprint $table) {
+        Schema::create('confessions_limits', function (Blueprint $table) {
             $table->id();
-            $table->text('type');
-            $table->longText('log');
-            $table->dateTime('created_at')->nullable();
+            $table->text("userID");
+            $table->integer("confessionsCount");
+            $table->timestamp("updated_at");
+            $table->timestamp("created_at");
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('logs');
+        Schema::dropIfExists('confessions_limits');
     }
 };

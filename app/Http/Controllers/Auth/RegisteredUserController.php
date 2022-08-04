@@ -41,6 +41,7 @@ class RegisteredUserController extends Controller
         ]);
 
         $formFields['password'] = bcrypt($formFields['password']);
+        $formFields['banned'] = false;
 
         $user = User::create($formFields);
 
