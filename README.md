@@ -76,6 +76,31 @@ php composer install
 
 -   Then youre ready to go
 
+## Database
+
+-   Change the name of the database inside the `.env` or create a database called incognito_confessions on your mysql database
+
+# Example
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=incognito_confessions
+DB_USERNAME=root
+DB_PASSWORD=admin
+```
+
+-   Execute these commands once done
+
+```
+php artisan migrate
+
+php artisan migrate:refresh 
+
+php artisan migrate:refresh --seed // optional
+```
+
 ## Authors
 
 -   Percival Ian Muico

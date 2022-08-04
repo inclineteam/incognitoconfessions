@@ -1,1 +1,3 @@
 -   responsive design
+-   logging
+-   security
