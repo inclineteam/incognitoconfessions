@@ -58,6 +58,24 @@ php artisan config:clear
 ],
 ```
 
+### Recaptcha
+-   Go to google's recaptcha and create a new project there for captcha and obtain your secret key and site key
+
+-   Then add secret key and site key inside the `.env`
+
+```
+NOCAPTCHA_SECRET=<secret-key>
+NOCAPTCHA_SITEKEY=<site-key>
+```
+
+-   Then run this command
+
+```
+php composer install
+```
+
+-   Then youre ready to go
+
 ## Authors
 
 -   Percival Ian Muico

@@ -14,7 +14,12 @@
             <x-form.control type="password" label="Confirm" name="password_confirmation" />
         </div>
 
-        <div class="mt-14">
+        <div class="my-5">
+            {!! NoCaptcha::renderJs() !!}
+            {!! NoCaptcha::display(['data-theme' => 'dark']) !!}
+        </div>
+
+        <div>
             <button type="submit"
                 class="bg-[#3B50F9] hover:bg-primary/70 w-max rounded py-3 px-4 font-medium text-white duration-150">
                 Reset Password

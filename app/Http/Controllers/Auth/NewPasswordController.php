@@ -40,6 +40,7 @@ class NewPasswordController extends Controller
             'email' => ['required_without:username', 'email', 'exists:users,email'],
             'username' => ['required_without:email', 'string', 'exists:users,username'],
             'password' => ['required', 'confirmed', RulesPassword::defaults()],
+            'g-recaptcha-response' => 'required:captcha',
         ]);
 
         // Here we will attempt to reset the user's password. If it is successful we

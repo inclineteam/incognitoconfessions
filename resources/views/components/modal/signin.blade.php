@@ -24,6 +24,11 @@
                             me</label>
                     </div>
 
+                    <div class="my-5">
+                        {!! NoCaptcha::renderJs() !!}
+                        {!! NoCaptcha::display(['data-theme' => 'dark']) !!}
+                    </div>
+
                     <button type="submit" class="bg-[#3B50F9] w-full rounded py-3 font-medium text-white">
                         Continue
                     </button>
