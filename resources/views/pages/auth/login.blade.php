@@ -20,6 +20,11 @@
                 class="cursor-pointer select-none text-sm text-white/50 hover:text-white/80">Remember me</label>
         </div>
 
+        <div class="my-5">
+            {!! NoCaptcha::renderJs() !!}
+            {!! NoCaptcha::display(['data-theme' => 'dark']) !!}
+        </div>
+
 
         <div class="flex justify-end">
             <a href="{{ route('password.email') }}" class="flex text-sm text-white/50 hover:text-white/80">

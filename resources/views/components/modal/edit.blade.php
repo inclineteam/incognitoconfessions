@@ -20,6 +20,11 @@
                         inputBg="bg-shark-lighter" />
                     <p class="text-[#ffffff] mb-3 mt-5 opacity-50"><label for="content" >Message</label></p>
                     <textarea name="content" class="w-[100%] rounded resize-none text-white p-3 text-normal h-[10rem] bg-shark-lighter">{{ $confession->content }}</textarea>
+                    
+                    <div class="my-5 flex justify-center">
+                        {!! NoCaptcha::renderJs() !!}
+                        {!! NoCaptcha::display() !!}
+                    </div>
 
                     <div class="flex justify-center">
                         <button label= type="submit" class="bg-[#3B50F9] mt-4 w-[10rem] rounded py-3 font-medium text-white">

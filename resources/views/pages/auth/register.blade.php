@@ -16,6 +16,11 @@
             <x-form.control type="password" label="Confirm" name="password_confirmation" />
         </div>
 
+        <div class="my-5">
+            {!! NoCaptcha::renderJs() !!}
+            {!! NoCaptcha::display(['data-theme' => 'dark']) !!}
+        </div>
+
         <div class="mt-14 space-y-8">
             <button type="submit"
                 class="bg-[#3B50F9] hover:bg-primary/70 w-full rounded py-3 px-4 font-medium text-white duration-150">

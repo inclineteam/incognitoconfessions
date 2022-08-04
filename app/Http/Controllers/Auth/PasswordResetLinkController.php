@@ -34,6 +34,7 @@ class PasswordResetLinkController extends Controller
         $request->validate([
             'email' => ['required_without:username', 'email', 'exists:users,email'],
             'username' => ['required_without:email', 'string', 'exists:users,username'],
+            'g-recaptcha-response' => 'required:captcha',
         ]);
 
         // We will send the password reset link to this user. Once we have attempted
