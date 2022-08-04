@@ -14,7 +14,7 @@ A laravel starter for future team project. Anyone is open to use this laravel te
 -   Node
 -   XAMPP
 
-### Installation
+## Installation
 
 -   Create an environt file `.env`
 -   Copy `.env.example`'s content and paste it in the environment file
@@ -22,7 +22,7 @@ A laravel starter for future team project. Anyone is open to use this laravel te
 -   Run `npm run dev` to start laravel
 -   Run `php artisan serve` to start the localhost
 
-### Authentication
+## Authentication
 
 -   For sending email (Gmail), you need to enable 2-factor verification and create an app password
 -   Add this on "smtp" inside `config/mail.php`
@@ -58,7 +58,7 @@ php artisan config:clear
 ],
 ```
 
-### Recaptcha
+## Recaptcha
 -   Go to google's recaptcha and create a new project there for captcha and obtain your secret key and site key
 
 -   Then add secret key and site key inside the `.env`
