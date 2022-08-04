@@ -16,11 +16,9 @@ A laravel starter for future team project. Anyone is open to use this laravel te
 
 ### Installation
 
--   Create an environt file `.env`
+-   Create an environment file `.env`
 -   Copy `.env.example`'s content and paste it in the environment file
 -   Run `npm install` to install dependencies
--   Run `npm run dev` to start laravel
--   Run `php artisan serve` to start the localhost
 
 ### Authentication
 
@@ -76,6 +74,37 @@ php composer install
 
 -   Then youre ready to go
 
+### Database
+
+-   Change the name of the database inside the `.env` or create a database called incognito_confessions on your mysql database
+
+#### Example
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=incognito_confessions
+DB_USERNAME=root
+DB_PASSWORD=admin
+```
+
+-   Execute these commands once done
+
+```
+php artisan migrate
+
+php artisan migrate:refresh 
+
+php artisan migrate:refresh --seed // optional
+```
+
+-   Then you are all set to go just execute these commands in two different terminals to run the project
+
+```
+npm run dev
+php artisan serve
+```
 ## Authors
 
 -   Percival Ian Muico
@@ -83,7 +112,16 @@ php composer install
 -   John Aeron Sencil
 
 ## Version History
+-   0.6
+    -   Added security ( #Recaptcha )
+    
+-   0.5
+    -   Create, Update, and Delete Confessions
 
+-   0.4
+    -   Authentication
+    -   Added Home Dashboard and Confessions Page
+    -   Search bar
 -   0.3
     -   Added card components
     -   Changed default landing page
