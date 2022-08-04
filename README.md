@@ -14,15 +14,13 @@ A laravel starter for future team project. Anyone is open to use this laravel te
 -   Node
 -   XAMPP
 
-## Installation
+### Installation
 
--   Create an environt file `.env`
+-   Create an environment file `.env`
 -   Copy `.env.example`'s content and paste it in the environment file
 -   Run `npm install` to install dependencies
--   Run `npm run dev` to start laravel
--   Run `php artisan serve` to start the localhost
 
-## Authentication
+### Authentication
 
 -   For sending email (Gmail), you need to enable 2-factor verification and create an app password
 -   Add this on "smtp" inside `config/mail.php`
@@ -58,7 +56,7 @@ php artisan config:clear
 ],
 ```
 
-## Recaptcha
+### Recaptcha
 -   Go to google's recaptcha and create a new project there for captcha and obtain your secret key and site key
 
 -   Then add secret key and site key inside the `.env`
@@ -76,11 +74,11 @@ php composer install
 
 -   Then youre ready to go
 
-## Database
+### Database
 
 -   Change the name of the database inside the `.env` or create a database called incognito_confessions on your mysql database
 
-### Example
+#### Example
 
 ```
 DB_CONNECTION=mysql
@@ -101,6 +99,12 @@ php artisan migrate:refresh
 php artisan migrate:refresh --seed // optional
 ```
 
+-   Then you are all set to go just execute these commands in two different terminals to run the project
+
+```
+npm run dev
+php artisan serve
+```
 ## Authors
 
 -   Percival Ian Muico
