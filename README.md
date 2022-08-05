@@ -69,7 +69,7 @@ NOCAPTCHA_SITEKEY=<site-key>
 -   Then run this command
 
 ```
-php composer install
+composer install
 ```
 
 -   Then youre ready to go
@@ -114,6 +114,7 @@ php artisan serve
 ## Version History
 -   0.6
     -   Added security ( #Recaptcha )
+    -   Download Confessions Letter Image
     
 -   0.5
     -   Create, Update, and Delete Confessions
