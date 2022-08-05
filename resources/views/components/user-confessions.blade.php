@@ -1,5 +1,5 @@
 @props(["confessions" => $confessions])
-<div class="h-[80%]">
+<div class="h-[73%]">
     @if (count($confessions) > 0)
         @foreach ($confessions as $confession)
             <x-confession-card :confession="$confession" />

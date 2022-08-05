@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Confessions;
+use App\Models\confessions_limits;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class confessionsController extends Controller
 {
@@ -36,6 +39,36 @@ class confessionsController extends Controller
         $confession->content = $request->content;
         $confession->userID = auth()->user()->id;
         $confession->save();
+
+        $onTable = count(confessions_limits::where("userID", auth()->user()->id)->get());
+
+        if($onTable > 0){
+
+            $limit = confessions_limits::where("userID", auth()->user()->id)->first();
+
+            if($limit->confessionsCount >= 100 ){
+                // ban
+                DB::table('users')->where("id", auth()->user()->id)->update(['banned' => 1]);
+                
+            } else {
+
+                // TODO check time 
+
+                if(time() - date_timestamp_get($limit->created_at) > 3600){
+                    DB::table('confessions_limits')->where("userID", auth()->user()->id)->update(["created_at" => Carbon::createFromTimestamp(time())]);
+                    DB::table('confessions_limits')->where("userID", auth()->user()->id)->update(["confessionsCount" => 1]);
+                } else {
+                    DB::table('confessions_limits')->where("userID", auth()->user()->id)->update(["confessionsCount" => $limit->confessionsCount + 1]);
+                }
+            }
+
+        } else {
+
+            $limit = new confessions_limits();
+            $limit->confessionsCount = 1;
+            $limit->userID = auth()->user()->id;
+            $limit->save();
+        }
 
         // add Log
 
@@ -75,7 +108,7 @@ class confessionsController extends Controller
     public function show(){
         if(auth()->user()){
             $confessions = Confessions::where("UserID", auth()->user()->id)->paginate(4);
-            return view('pages.userinfo', ["confessions" => $confessions]);
+            return view('pages.userinfo', ["confessions" => $confessions, "all" => Confessions::where("UserID", auth()->user()->id)->get()]);
         } else {
             return view('pages.userinfo', ["confessions" => []]);
         }
