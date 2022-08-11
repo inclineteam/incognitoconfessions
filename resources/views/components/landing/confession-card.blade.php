@@ -1,6 +1,6 @@
 @props(['confession'])
 
-<div class="relative mb-6 inline-block w-full overflow-hidden rounded-lg bg-[#25262B] p-6">
+<div class="relative mb-6 inline-block w-full overflow-hidden rounded-lg bg-zinc-800/90 p-6">
     <img src="/images/quote.svg" alt="" class="absolute -top-10 left-0 h-36 w-36 select-none" />
 
     <div class="flex h-[4rem] items-center justify-between text-sm">

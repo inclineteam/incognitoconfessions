@@ -8,7 +8,7 @@
 
         <!-- Email Address -->
         <div>
-            <x-form.control label='Email or Username' name='login' />
+            <x-form.control label='Email Address' name='email' />
         </div>
 
         <div class="my-5">
@@ -17,7 +17,7 @@
         </div>
 
         <button type="submit"
-            class="bg-[#3B50F9] hover:bg-primary/70 w-max rounded py-3 px-4 font-medium text-white duration-150">
+            class="w-max rounded border-t border-indigo-500 bg-indigo-600 py-3 px-4 font-medium text-white duration-150">
             Send Link
         </button>
     </form>
