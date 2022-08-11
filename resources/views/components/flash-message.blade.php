@@ -1,7 +1,7 @@
 @if (session()->has('message'))
     <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 5000)" x-show="show" x-transition:leave="transition ease-in duration-250"
         x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0" x-cloak
-        class="fixed top-5 left-1/2 z-50 flex -translate-x-1/2 overflow-hidden rounded-lg bg-zinc-800 shadow-xl">
+        class="fixed top-5 left-1/2 z-[999] flex -translate-x-1/2 overflow-hidden rounded-lg bg-zinc-800 shadow-xl">
 
 
         <div class="flex items-center space-x-4 py-5 pl-6 pr-8">
