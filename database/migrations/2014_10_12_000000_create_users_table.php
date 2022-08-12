@@ -24,10 +24,11 @@ return new class extends Migration
             $table->string('provider')->nullable();
 
             $table->string('name');
+            $table->string('username')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
-            $table->boolean('banned')->default(false);
+            $table->boolean('banned')->nullable(false);
             $table->rememberToken();
             $table->timestamps();
         });

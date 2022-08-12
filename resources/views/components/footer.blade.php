@@ -1,3 +1,3 @@
-<footer class="w-full border-t border-zinc-800 bg-zinc-900 pt-8 pb-10 text-center text-sm text-zinc-400">
+<footer class="bg-shark w-full border-t border-white/10 pt-5 pb-8 text-center text-sm text-white/50">
     <p>Copyright &copy; 2022 Incline Team. All Rights Reserved</p>
 </footer>

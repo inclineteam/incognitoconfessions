@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('confession_limits', function (Blueprint $table) {
+        Schema::create('confessions_limits', function (Blueprint $table) {
             $table->id();
-            $table->integer("confessions_count");
-            // id of user
-            $table->foreignId("user_id")->constrained()->cascadeOnDelete();
+            $table->text("userID");
+            $table->integer("confessionsCount");
             $table->timestamp("updated_at");
             $table->timestamp("created_at");
         });

@@ -32,9 +32,13 @@ class NewPasswordController extends Controller
      */
     public function store(Request $request)
     {
+        $loginField = filter_var($request->input('login'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+        $request->merge([$loginField => $request->input('login')]);
         $request->validate([
             'token' => ['required'],
-            'email' => ['required', 'email', 'exists:users,email'],
+            'email' => ['required_without:username', 'email', 'exists:users,email'],
+            'username' => ['required_without:email', 'string', 'exists:users,username'],
             'password' => ['required', 'confirmed', RulesPassword::defaults()],
             'g-recaptcha-response' => 'required:captcha',
         ]);
@@ -43,7 +47,7 @@ class NewPasswordController extends Controller
         // will update the password on an actual user model and persist it to the
         // database. Otherwise we will parse the error and return the response.
         $status = Password::reset(
-            $request->only('email', 'password', 'password_confirmation', 'token'),
+            $request->only($loginField, 'password', 'password_confirmation', 'token'),
             function ($user) use ($request) {
                 $user->forceFill([
                     'password' => bcrypt($request->password),
@@ -58,8 +62,8 @@ class NewPasswordController extends Controller
         // the application's home authenticated view. If there is an error we can
         // redirect them back to where they came from with their error message.
         return $status == Password::PASSWORD_RESET
-        ? redirect()->route('home')->with('status', __($status))
-        : back()->withInput($request->only('email'))
-            ->withErrors(['email' => __($status)]);
+        ? redirect()->route('login')->with('status', __($status))
+        : back()->withInput($request->only($loginField))
+            ->withErrors(['login' => __($status)]);
     }
 }

@@ -2,16 +2,18 @@
 
 <div>
     <!-- TODO -->
-    <div class="flex flex-col">
+
+    <div class="flex h-[250vh] flex-col">
+
         @if (count($confessions) > 0)
             @if (count($confessions) <= 3)
-                <div class="flex w-full items-start justify-center gap-6">
+                <div class="relative mx-auto flex max-w-6xl columns-3 items-start gap-6">
                     @foreach ($confessions as $confession)
                         <x-confessions.view-confession-card :confession="$confession" />
                     @endforeach
                 </div>
             @else
-                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div class="relative mx-auto max-w-6xl columns-3 gap-6">
                     @foreach ($confessions as $confession)
                         <x-confessions.view-confession-card :confession="$confession" />
                     @endforeach
@@ -21,7 +23,7 @@
             <p class="text-center text-2xl text-white/50">No confessions found</p>
         @endif
 
-        <div class="flex w-full justify-center pb-10 pt-20 text-white">
+        <div class="flex w-[100%] p-5 justify-center text-white">
             {{ $confessions->links('vendor.pagination.custom') }}
         </div>
     </div>

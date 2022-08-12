@@ -18,8 +18,7 @@ return new class extends Migration
             $table->string("name");
             $table->string("to");
             $table->longText("content");
-            // id of confesser
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->string("userID");
             $table->timestamps();
         });
     }

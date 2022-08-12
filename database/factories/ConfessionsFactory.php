@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Confessions>
  */
-class ConfessionFactory extends Factory
+class ConfessionsFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,6 +20,7 @@ class ConfessionFactory extends Factory
             "name" => $this->faker->name(),
             "to" => $this->faker->name(),
             "content" => $this->faker->text(),
+            "userID" => $this->faker->randomDigit()
         ];
     }
 }

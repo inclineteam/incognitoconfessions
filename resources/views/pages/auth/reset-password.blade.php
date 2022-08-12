@@ -6,7 +6,7 @@
         <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
         <div class="mb-6">
-            <x-form.control label="Email Address" name='email' />
+            <x-form.control label="Email or Username" name='login' />
         </div>
 
         <div class="mb-6 flex items-center space-x-4">
@@ -21,7 +21,7 @@
 
         <div>
             <button type="submit"
-                class="w-max rounded border-t border-indigo-500 bg-indigo-600 py-3 px-4 font-medium text-white duration-150">
+                class="bg-[#3B50F9] hover:bg-primary/70 w-max rounded py-3 px-4 font-medium text-white duration-150">
                 Reset Password
             </button>
         </div>
