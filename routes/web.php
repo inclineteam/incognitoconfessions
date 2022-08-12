@@ -3,6 +3,7 @@
 use App\Http\Controllers\ConfessionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\UpdateCredentialsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,9 @@ Route::get('/home', [HomeController::class, "show"])->name("home");
 
 // Show confessions page
 Route::get('/confessions', [ConfessionController::class, "index"])->name('confessions');
+
+// Show edit credentials page
+Route::get('/profile', [UpdateCredentialsController::class, "show"])->name('profile');
 
 // Show create confession form
 Route::get('/confessions/create', [ConfessionController::class, "create"])->name('confession.create');

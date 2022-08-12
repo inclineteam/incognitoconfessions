@@ -1,9 +1,11 @@
 <header class="sticky top-0 z-50 flex items-center border-b border-zinc-800 bg-zinc-900/80 py-3 backdrop-blur-md">
     <div class="mx-auto flex w-full max-w-6xl items-center justify-between">
         <div class="flex items-center space-x-6">
-            <a href="/">
-                <i class="ai-glasses ml-5 text-4xl text-zinc-300"></i>
-            </a>
+            <div class="flex justify-center w-[5rem]">
+                <a href="/">
+                    <i class="ai-glasses text-4xl text-zinc-300"></i>
+                </a>
+            </div>
             @if (Route::current()->getName() == 'confessions')
                 <x-confessions.confessions-searchbar />
             @endif
@@ -51,13 +53,16 @@
                             </form>
                         @endif
 
-                        <button
+                        <form method="GET" action="{{ route('profile') }}">
+                            @csrf
+                            <button
                             class="group flex w-full items-center justify-between space-x-4 px-8 py-1 text-left text-sm text-zinc-400 duration-150 hover:bg-zinc-800 hover:text-zinc-300">
-                            <span>
-                                Change password
-                            </span>
-                            <i class="ai-lock-on text-lg text-zinc-500 duration-150 group-hover:text-zinc-300"></i>
-                        </button>
+                                <span>
+                                    Edit Profile
+                                </span>
+                                <i class="ai-lock-on text-lg text-zinc-500 duration-150 group-hover:text-zinc-300"></i>
+                            </button>
+                        </form>
 
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

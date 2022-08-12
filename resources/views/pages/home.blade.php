@@ -12,7 +12,7 @@
                 </div>
             @else
                 <div class="mx-1 w-full flex h-[100%] flex-col max-w-6xl">
-                    <div class="mb-10 ml-5 flex items-center
+                    <div class="mb-2 ml-5 flex items-center
                     justify-center
                     lg:justify-start
                      space-x-8 pb-4">
@@ -21,7 +21,7 @@
                          items-center space-x-4">
                             <a href="{{ route('confession.create') }}">
                                 <button
-                                    class="flex items-center space-x-2 rounded-md bg-indigo-900/20 px-4 py-3 font-medium hover:bg-indigo-900/30">
+                                    class="flex items-center space-x-2 xl:ml-0 lg:ml-0 md:ml-4 ml-4 sm:ml-4 rounded-md bg-indigo-900/20 px-4 py-3 font-medium hover:bg-indigo-900/30">
                                     <i class="ai-plus text-indigo-500"></i>
                                     <span class="text-indigo-400">Write a confession</span>
                                 </button>
