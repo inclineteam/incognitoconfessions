@@ -2,9 +2,8 @@
     <form method="POST" action="{{ route('register') }}" class="p-8">
         @csrf
 
-        <div class="mb-6 flex items-center space-x-6">
-            <x-form.control label='Name' name="name" />
-            <x-form.control label="Username" name="username" />
+        <div class="mb-6">
+            <x-form.control-with-icon label='Name' name="name" icon="ai-person" />
         </div>
 
         <div class="mb-6">
@@ -16,14 +15,13 @@
             <x-form.control type="password" label="Confirm" name="password_confirmation" />
         </div>
 
-        <div class="my-5">
+        <div class="mb-5 mt-14">
             {!! NoCaptcha::renderJs() !!}
             {!! NoCaptcha::display(['data-theme' => 'dark']) !!}
         </div>
 
-        <div class="mt-14 space-y-8">
-            <button type="submit"
-                class="bg-[#3B50F9] hover:bg-primary/70 w-full rounded py-3 px-4 font-medium text-white duration-150">
+        <div class="space-y-8">
+            <button type="submit" class="w-full rounded bg-indigo-500 py-3 px-4 font-medium text-white duration-150">
                 Create Account
             </button>
 
@@ -33,14 +31,4 @@
             </p>
         </div>
     </form>
-
-    @section('script')
-        <script>
-            let input = document.querySelector("#username");
-
-            input.oninput = e => {
-                input.value = e.target.value.replace(/ /g, '').toLowerCase()
-            }
-        </script>
-    @endsection
 </x-auth-layout>

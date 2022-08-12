@@ -32,16 +32,14 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $formFields = $request->validate([
-            'username' => ['required', 'string', 'min:2', 'max:16', 'unique:users'],
             'name' => ['required', 'string', 'min:6', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Password::defaults(),
-            'g-recaptcha-response' => 'required:captcha',
-        ],
+                'g-recaptcha-response' => 'required:captcha',
+            ],
         ]);
 
         $formFields['password'] = bcrypt($formFields['password']);
-        $formFields['banned'] = false;
 
         $user = User::create($formFields);
 

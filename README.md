@@ -57,6 +57,7 @@ php artisan config:clear
 ```
 
 ### Recaptcha
+
 -   Go to google's recaptcha and create a new project there for captcha and obtain your secret key and site key
 
 -   Then add secret key and site key inside the `.env`
@@ -94,10 +95,12 @@ DB_PASSWORD=admin
 ```
 php artisan migrate
 
-php artisan migrate:refresh 
+php artisan migrate:refresh
 
 php artisan migrate:refresh --seed // optional
 ```
+
+> You might get an error after running `php artisan migrate:refresh --seed`, so we suggest you to delete the database, create new one and run `php artisan migrate`.
 
 -   Then you are all set to go just execute these commands in two different terminals to run the project
 
@@ -105,6 +108,7 @@ php artisan migrate:refresh --seed // optional
 npm run dev
 php artisan serve
 ```
+
 ## Authors
 
 -   Percival Ian Muico
@@ -112,11 +116,12 @@ php artisan serve
 -   John Aeron Sencil
 
 ## Version History
+
 -   0.6
     -   Added security ( #Recaptcha )
     -   Download Confessions Letter Image
-    
 -   0.5
+
     -   Create, Update, and Delete Confessions
 
 -   0.4
