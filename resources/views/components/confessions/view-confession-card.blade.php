@@ -1,7 +1,7 @@
 @props(['confession'])
 
 <div id="{{ $confession->id }}"
-    class="confession-letter relative flex h-full w-full max-w-md flex-col justify-between overflow-hidden rounded-2xl bg-zinc-800/90 p-6">
+    class="confession-letter relative flex h-full w-full max-w-[98%] md:max-w-md lg:max-w-md flex-col justify-between overflow-hidden rounded-2xl bg-zinc-800/90 p-6">
     <img src="/images/quote.svg" alt="" class="absolute -top-10 left-0 h-36 w-36 select-none" />
 
     <div class="mb-16">

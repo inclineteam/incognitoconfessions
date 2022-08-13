@@ -11,12 +11,17 @@
                     </p>
                 </div>
             @else
-                <div class="mx-auto w-full max-w-6xl">
-                    <div class="mb-10 flex items-center space-x-8 pb-4">
-                        <div class="flex items-center space-x-4">
+                <div class="mx-1 w-full flex h-[100%] flex-col max-w-6xl">
+                    <div class="mb-2 ml-5 flex items-center
+                    justify-center
+                    lg:justify-start
+                     space-x-8 pb-4">
+                        <div class="flex flex-col
+                        lg:flex-row
+                         items-center space-x-4">
                             <a href="{{ route('confession.create') }}">
                                 <button
-                                    class="flex items-center space-x-2 rounded-md bg-indigo-900/20 px-4 py-3 font-medium hover:bg-indigo-900/30">
+                                    class="flex items-center space-x-2 xl:ml-0 lg:ml-0 md:ml-4 ml-4 sm:ml-4 rounded-md bg-indigo-900/20 px-4 py-3 font-medium hover:bg-indigo-900/30">
                                     <i class="ai-plus text-indigo-500"></i>
                                     <span class="text-indigo-400">Write a confession</span>
                                 </button>
@@ -34,7 +39,9 @@
                     </div>
 
                     @if (count($confessions) > 0)
-                        <p class="mb-6 text-xl font-medium text-zinc-300">Your confessions</p>
+                        <p class="mb-6 ml-5 text-xl font-medium text-center
+                        lg:text-start
+                         text-zinc-300">Your confessions</p>
                         <x-home.conditional-columns :items="$confessions">
                             @foreach (auth()->user()->confessions as $confession)
                                 <x-home.confession-card :confession="$confession" />
