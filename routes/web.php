@@ -27,7 +27,9 @@ Route::get('/home', [HomeController::class, "show"])->name("home");
 Route::get('/confessions', [ConfessionController::class, "index"])->name('confessions');
 
 // Show edit credentials page
-Route::get('/profile', [UpdateCredentialsController::class, "show"])->name('profile');
+Route::get('/profile/show', [UpdateCredentialsController::class, "show"])->name('profile.show');
+// Show edit credentials page
+Route::put('/profile/edit', [UpdateCredentialsController::class, "update"])->name('profile.edit');
 
 // Show create confession form
 Route::get('/confessions/create', [ConfessionController::class, "create"])->name('confession.create');
