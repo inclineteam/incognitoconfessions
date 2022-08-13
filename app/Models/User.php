@@ -21,7 +21,6 @@ class User extends Authenticatable
         'provider',
         'name',
         'banned',
-        'username',
         'email',
         'password',
     ];
