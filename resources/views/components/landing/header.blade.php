@@ -8,7 +8,7 @@
         </a>
         <nav class="space-x-12 font-medium">
             <a href={{ route('confessions') }}>Confessions</a>
-            <a href="#about">About</a>
+            <a href="{{ route('about') }}">About</a>
             <a href={{ route('login') }}>
                 <button class="bg-shark-lighter rounded py-3 px-5 font-medium text-[#FFFBD7]">
                     Sign in
