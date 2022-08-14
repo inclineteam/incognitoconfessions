@@ -15,6 +15,7 @@ class LandingController extends Controller
 
     public function privacy()
     {
+        return view('pages.privacy');
     }
 
     public function about()
@@ -24,11 +25,11 @@ class LandingController extends Controller
 
     public function discord()
     {
-
+        // redirect
     }
 
     public function source()
     {
-
+        // redirect
     }
 }
