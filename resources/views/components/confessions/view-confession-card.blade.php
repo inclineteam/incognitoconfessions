@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <p class="relative whitespace-pre-wrap text-lg italic text-zinc-300">{{ $confession->content }}</p>
+        <p class="relative whitespace-pre-line break-all truncate text-lg italic text-zinc-300">{{ $confession->content }}</p>
     </div>
 
     <div class="flex items-center justify-between text-sm">

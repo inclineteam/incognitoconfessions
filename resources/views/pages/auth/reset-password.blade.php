@@ -16,7 +16,7 @@
 
         <div class="my-5">
             {!! NoCaptcha::renderJs() !!}
-            {!! NoCaptcha::display(['data-theme' => 'dark']) !!}
+            {!! NoCaptcha::display(['data-theme' => 'dark', 'data-size' => 'compact']) !!}
         </div>
 
         <div>

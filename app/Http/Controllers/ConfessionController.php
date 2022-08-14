@@ -8,6 +8,7 @@ use App\Models\Replies;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 
 class ConfessionController extends Controller
@@ -74,7 +75,8 @@ class ConfessionController extends Controller
             'user_id' => auth()->user()->id,
             'content' => $request->content,
         ]);
-        return redirect()->back();
+        
+        return Redirect::to('/confessions/' . $confession->id . "#comment");
     }
 
     public function delete(Replies $reply)
