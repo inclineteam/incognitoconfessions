@@ -1,7 +1,8 @@
 @props(['confession'])
 
-<div id="{{ $confession->id }}"
-    class="confession-letter relative flex h-full w-full max-w-[98%] md:max-w-md lg:max-w-md flex-col justify-between overflow-hidden rounded-2xl bg-zinc-800/90 p-6">
+<a id="{{ $confession->id }}"
+    class="confession-letter relative flex h-full w-full max-w-[98%] md:max-w-md lg:max-w-md flex-col justify-between overflow-hidden rounded-2xl bg-zinc-800/90 p-6"
+    href="/confessions/{{ $confession->id }}">
     <img src="/images/quote.svg" alt="" class="absolute -top-10 left-0 h-36 w-36 select-none" />
 
     <div class="mb-16">
@@ -14,7 +15,7 @@
             </div>
         </div>
 
-        <p class="relative whitespace-pre-wrap text-lg italic text-zinc-300">{{ $confession->content }}</p>
+        <p class="relative whitespace-pre-line break-all truncate text-lg italic text-zinc-300">{{ $confession->content }}</p>
     </div>
 
     <div class="flex items-center justify-between text-sm">
@@ -47,4 +48,4 @@
             });
         });
     </script>
-</div>
+</a>

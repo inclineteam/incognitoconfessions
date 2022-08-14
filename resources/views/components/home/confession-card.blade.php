@@ -24,7 +24,7 @@ xlg:max-w-[95%]
             </p>
             <div class="flex flex-col h-full px-5 py-6">
                 <div class="flex h-[100%]">
-                    <p class="mb-6 text-lg truncate text-zinc-300">{{ $confession->content }}</p>
+                    <p class="mb-6 text-lg truncate break-all text-zinc-300">{{ $confession->content }}</p>
                 </div>
                 <div class="flex justify-end">
                     <p class="text-sm text-zinc-400">{{ $confession->to }}</p>

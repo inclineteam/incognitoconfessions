@@ -10,7 +10,7 @@
             <span class="font-semibold">Incognito</span>
         </a>
 
-        <div class="mx-auto w-full max-w-xl rounded-lg bg-zinc-800">
+        <div class="mx-auto w-[96%] max-w-xl rounded-lg bg-zinc-800">
             <header class="px-8 pt-6 text-2xl font-semibold text-zinc-300">
                 <p>{{ $title }}</p>
             </header>

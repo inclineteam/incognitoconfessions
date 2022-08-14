@@ -26,5 +26,4 @@
             </form>
         </div>
     </div>
-    <x-modal.edit :confession="$confession"/>
 </div>
