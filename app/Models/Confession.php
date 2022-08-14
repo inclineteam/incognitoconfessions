@@ -18,7 +18,13 @@ class Confession extends Model
         "name",
         "to",
         "content",
+        "reacts",
+        "reacts_users",
         'user_id',
+    ];
+
+    protected $casts = [
+        'reacts_users' => 'array',
     ];
 
     public function scopeFilter($query, array $filters)
@@ -31,5 +37,10 @@ class Confession extends Model
     public function confesser()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(Replies::class);
     }
 }

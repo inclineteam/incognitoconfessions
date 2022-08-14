@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Confession;
 use App\Models\ConfessionLimit;
+use App\Models\Replies;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ConfessionController extends Controller
 {
@@ -34,6 +36,54 @@ class ConfessionController extends Controller
         return view('pages.confessions', ["confessions" => $confessions]);
     }
 
+    public function confess(Confession $confession)
+    {
+        return view('pages.confession', ["confession" => $confession]);
+    }
+
+    public function react(Confession $confession)
+    {
+        $reacts = $confession->reacts;
+        $reacts_users = $confession->reacts_users;
+
+        if(in_array(auth()->user()->id, $confession->reacts_users)) {
+            $reacts_users = array_diff($reacts_users, [auth()->user()->id]);
+            $reacts--;
+        } else {
+            $reacts_users[] = auth()->user()->id;
+            $reacts++;
+        }
+
+        $confession->update([
+            'reacts' => $reacts,
+            'reacts_users' => $reacts_users,
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function reply(Request $request, Confession $confession)
+    {
+        $request->validate([
+            'content' => 'required|string|max:255',
+        ]);
+
+        Replies::create([
+
+            'confession_id' => $confession->id,
+            'user_id' => auth()->user()->id,
+            'content' => $request->content,
+        ]);
+        return redirect()->back();
+    }
+
+    public function delete(Replies $reply)
+    {
+        $reply->delete();
+        return redirect()->back();
+    }
+
+
     public function store(Request $request)
     {
         $formFields = $request->validate([
@@ -44,6 +94,8 @@ class ConfessionController extends Controller
         ]);
 
         $formFields['user_id'] = auth()->id();
+        $formFields['reacts'] = 0;
+        $formFields['reacts_users'] = [];
 
         Confession::create($formFields);
 
@@ -53,7 +105,7 @@ class ConfessionController extends Controller
 
             $limit = ConfessionLimit::where("user_id", auth()->user()->id)->first();
 
-            if ($limit->confessions_count >= 50) {
+            if ($limit->confessions_count >= 100) {
                 // ban
                 DB::table('users')->where("id", auth()->user()->id)->update(['banned' => true]);
 

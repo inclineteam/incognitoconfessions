@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 return new class extends Migration
 {
@@ -13,16 +14,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('confessions', function (Blueprint $table) {
+        Schema::create('replies', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->string("to");
-            $table->longText("content");
-            // number of reacts
-            $table->integer("reacts")->default(0);
-            $table->json("reacts_users")->nullable();
-            // id of confesser
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('confession_id')->constrained()->cascadeOnDelete();
+            $table->longText('content');
             $table->timestamps();
         });
     }
@@ -34,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('confessions');
+        Schema::dropIfExists('replies');
     }
 };

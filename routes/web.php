@@ -26,11 +26,6 @@ Route::get('/home', [HomeController::class, "show"])->name("home");
 // Show confessions page
 Route::get('/confessions', [ConfessionController::class, "index"])->name('confessions');
 
-// Show edit credentials page
-Route::get('/profile/show', [UpdateCredentialsController::class, "show"])->name('profile.show');
-// Show edit credentials page
-Route::put('/profile/edit', [UpdateCredentialsController::class, "update"])->name('profile.edit');
-
 // Show create confession form
 Route::get('/confessions/create', [ConfessionController::class, "create"])->name('confession.create');
 
@@ -45,5 +40,20 @@ Route::put('/confessions/{confession}/edit', [ConfessionController::class, "upda
 
 // Delete confession
 Route::delete('/confessions/{confession}/delete', [ConfessionController::class, "destroy"]);
+
+// Show confessions page solo
+Route::get('/confessions/{confession}', [ConfessionController::class, "confess"]);
+// react to confession
+Route::put('/confessions/{confession}', [ConfessionController::class, "react"]);
+// delete
+Route::delete('/confessions/reply/{reply}', [ConfessionController::class, "delete"]);
+
+// reply to confession
+Route::post('/confessions/{confession}/reply', [ConfessionController::class, "reply"]);
+
+// Show edit credentials page
+Route::get('/profile/show', [UpdateCredentialsController::class, "show"])->name('profile.show');
+// Show edit credentials page
+Route::put('/profile/edit', [UpdateCredentialsController::class, "update"])->name('profile.edit');
 
 require __DIR__ . '/auth.php';
