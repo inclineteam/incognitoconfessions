@@ -20,6 +20,20 @@ use Illuminate\Support\Facades\Route;
 //  Show landing page
 Route::get('/', [LandingController::class, "index"])->middleware("guest");
 
+// show about page
+Route::get('/about', [LandingController::class, "about"])->middleware("guest")->name("about");
+
+// show privacy page
+Route::get('/privacy', [LandingController::class, "privacy"])->middleware("guest")->name("privacy");
+
+// redirect discord
+Route::get('/discord', [LandingController::class, "discord"])->middleware("guest")->name("discord");
+
+// redirect to source code github
+Route::get('/source', [LandingController::class, "source"])->middleware("guest")->name("source");
+
+// --------------------------------------------------------------
+
 // Show home page
 Route::get('/home', [HomeController::class, "show"])->name("home");
 

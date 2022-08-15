@@ -12,4 +12,24 @@ class LandingController extends Controller
         $confessions = Confession::orderBy('id', 'desc')->take(15)->get();
         return view('pages.landing', ["confessions" => $confessions]);
     }
+
+    public function privacy()
+    {
+        return view('pages.privacy');
+    }
+
+    public function about()
+    {
+        return view('pages.about');
+    }
+
+    public function discord()
+    {
+        // redirect
+    }
+
+    public function source()
+    {
+        // redirect
+    }
 }
