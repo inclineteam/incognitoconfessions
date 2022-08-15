@@ -6,7 +6,7 @@
 
             <div id="{{ $confession->id }}" class="bg-zinc-800/90 w-[100%] h-[100%] rounded-lg">
                 <div class="flex">
-                    <p class="text-white text-[1.2rem] pl-5 pt-8 pb-5 ml-5">{{ $confession->name }}</p>
+                    <p class="text-white opacity-30 text-[1.2rem] pl-5 pt-8 pb-5 ml-5">{{ $confession->name }}</p>
                     <div class="pt-8 w-[100%] mb-6 flex items-end justify-end pr-10 space-x-4">
                         <div class="flex justify-end">
                             <button id="{{ $confession->id }}take_screenshot">
@@ -20,11 +20,11 @@
                 </div>
                 <div class="flex justify-center w-full mt-9">
                     <div class="flex w-[90%]">
-                        <p class="text-white break-all font-light opacity-30">{{ $confession->content }}</p>
+                        <p class="text-white break-all text-[20px] font-light">{{ $confession->content }}</p>
                     </div>
                 </div>
                 <div class="flex">
-                    <p class="text-white p-5 text-[0.9rem] ml-5">To {{ $confession->to }}</p>
+                    <p class="text-white opacity-30 p-5 text-[14px] ml-5">To {{ $confession->to }}</p>
                 </div>
                 @if (auth()->user())
                     <div class="flex p-5 ml-5 ">

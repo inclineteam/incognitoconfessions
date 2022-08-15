@@ -21,16 +21,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LandingController::class, "index"])->middleware("guest");
 
 // show about page
-Route::get('/about', [LandingController::class, "about"])->middleware("guest")->name("about");
+Route::get('/about', [LandingController::class, "about"])->name("about");
 
 // show privacy page
-Route::get('/privacy', [LandingController::class, "privacy"])->middleware("guest")->name("privacy");
+Route::get('/privacy', [LandingController::class, "privacy"])->name("privacy");
 
 // redirect discord
-Route::get('/discord', [LandingController::class, "discord"])->middleware("guest")->name("discord");
+Route::get('/discord', [LandingController::class, "discord"])->name("discord");
+
+// redirect bug report
+Route::get('/report', [LandingController::class, "discord"])->name("report");
 
 // redirect to source code github
-Route::get('/source', [LandingController::class, "source"])->middleware("guest")->name("source");
+Route::get('/source', [LandingController::class, "source"])->name("source");
 
 // --------------------------------------------------------------
 
