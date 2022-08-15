@@ -26,10 +26,30 @@ class LandingController extends Controller
     public function discord()
     {
         // redirect
+        return redirect()->back(); 
+    }
+
+    public function facebook()
+    {
+        // redirect
+        return redirect()->back(); 
+    }
+
+    public function github()
+    {
+        // redirect
+        return redirect()->back(); 
+    }
+
+    public function report()
+    {
+        // redirect
+        return redirect()->back(); 
     }
 
     public function source()
     {
         // redirect
+        return redirect()->back(); 
     }
 }
