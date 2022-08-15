@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
-    <form method="POST" action="/confessions/{{ $confession->id }}/edit" class="mx-auto max-w-lg">
+    <form method="POST" action="/confessions/{{ $confession->id }}/edit" class="mx-auto flex flex-col justify-center items-center max-w-lg">
         @csrf
         @method('PUT')
         <p class="mb-10 border-b border-zinc-800/50 pb-5 text-xl font-medium text-zinc-300">Write a confession</p>
-        <x-form.control name="name" label="Letter Name" inputBg="bg-zinc-800" defaultValue="{{ $confession->name }}" />
-        <x-form.control-textarea class="my-8" name="content" label="Letter Message" inputBg="bg-zinc-800"
+        <x-form.control class="w-[90%]" name="name" label="Letter Name" inputBg="bg-zinc-800" defaultValue="{{ $confession->name }}" />
+        <x-form.control-textarea class="my-8 w-[90%]" name="content" label="Letter Message" inputBg="bg-zinc-800"
             defaultValue="{{ $confession->content }}" />
-        <x-form.control name="to" label="To" inputBg="bg-zinc-800" defaultValue="{{ $confession->to }}" />
+        <x-form.control class="w-[90%]" name="to" label="To" inputBg="bg-zinc-800" defaultValue="{{ $confession->to }}" />
 
         <div class="my-8">
             {!! NoCaptcha::renderJs() !!}
