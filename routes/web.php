@@ -35,6 +35,9 @@ Route::get('/report', [LandingController::class, "discord"])->name("report");
 // redirect to source code github
 Route::get('/source', [LandingController::class, "source"])->name("source");
 
+// show terms page
+Route::get('/terms', [LandingController::class, "terms"])->name("terms");
+
 // show cookie page
 Route::get('/cookie', [ConfessionController::class, "cookie"])->name("cookie");
 

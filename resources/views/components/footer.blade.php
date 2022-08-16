@@ -10,7 +10,7 @@
                     {{ route('privacy') }}
                 ">Privacy Policy</a></li>
                 <li class="flex mt-4"><a href="
-                    {{ route('privacy') }}
+                    {{ route('terms') }}
                 ">Terms Of Use</a></li>
             </ul>
         </div>

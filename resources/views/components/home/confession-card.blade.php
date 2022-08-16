@@ -28,7 +28,11 @@ rounded-xl bg-zinc-800/90">
                 </div>
                 <div class="flex justify-between">
                     <div class="flex">
-                        <p href="#comment" class="w-[4rem] rounded-full flex justify-center items-center mr-3 h-[1.7rem] font-thin text-[1rem] text-white/50 bg-[#373737]"><img src="/images/heart-2.png" class="p-1 h-[1.7rem]" />{{ $confession->reacts }}</img></p>
+                        @if ($confession->reacts <= 0)
+                            <p href="#comment" class="w-[4rem] rounded-full flex justify-center items-center mr-3 h-[1.7rem] font-thin text-[1rem] text-white/50 bg-[#373737]"><img src="/images/heart.png" class="p-1 h-[1.7rem]" />{{ $confession->reacts }}</img></p>
+                        @else
+                            <p href="#comment" class="w-[4rem] rounded-full flex justify-center items-center mr-3 h-[1.7rem] font-thin text-[1rem] text-white/50 bg-[#373737]"><img src="/images/heart-2.png" class="p-1 h-[1.7rem]" />{{ $confession->reacts }}</img></p>
+                        @endif
                         <p href="#comment" class="w-[4rem] rounded-full flex justify-center items-center h-[1.7rem] font-thin text-[1rem] text-white/50 bg-[#373737]"><img src="/images/message.png" class="p-1" />{{ count($confession->replies) }}</img></p>
                     </div>
                     <div>

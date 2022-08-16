@@ -36,13 +36,13 @@ class LandingController extends Controller
         return redirect()->back(); 
     }
 
-    public function github()
+    public function report()
     {
         // redirect
         return redirect()->back(); 
     }
 
-    public function report()
+    public function terms()
     {
         // redirect
         return redirect()->back(); 
@@ -51,6 +51,6 @@ class LandingController extends Controller
     public function source()
     {
         // redirect
-        return redirect()->back(); 
+        return redirect()->to('https://github.com/mmmsss211/Incognito-Confessions'); 
     }
 }
