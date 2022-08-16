@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Confession;
 use App\Models\ConfessionLimit;
 use App\Models\Replies;
+use App\Models\ReplyLimits;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Str;
 
 class ConfessionController extends Controller
 {
@@ -18,9 +18,14 @@ class ConfessionController extends Controller
         return view('pages.confession.create');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $confessions = [];
+
+        if($request->cookie('laravel_cookie_consent') == null){
+            // do not let user in if cookie consent is not accepted
+            return Redirect::to('/cookie');
+        }
 
         // if there is sort query in request, sort the items, else, get latest items
         if (request('sort')) {
@@ -35,6 +40,16 @@ class ConfessionController extends Controller
         }
 
         return view('pages.confessions', ["confessions" => $confessions]);
+    }
+
+    public function cookie(Request $request){
+        
+        if($request->cookie('laravel_cookie_consent') !== null){
+            // do not let user in if cookie consent is accepted already
+            return redirect()->back();
+        }
+
+        return view('pages.cookie');
     }
 
     public function confess(Confession $confession)
@@ -69,13 +84,26 @@ class ConfessionController extends Controller
             'content' => 'required|string|max:255',
         ]);
 
+        // limit user to reply to confession 5 seconds per minute using session
+    
+        if(session()->has('reply_limit')){
+            $reply_limit = session()->get('reply_limit');
+            $now = Carbon::now();
+            $diff = $now->diffInSeconds($reply_limit);
+            if($diff < 5){
+                return redirect()->back()->withErrors(['content' => 'You can reply to confession every 5 seconds']);
+            }
+        }
+
+        session()->put('reply_limit', Carbon::now());
+
         Replies::create([
 
             'confession_id' => $confession->id,
             'user_id' => auth()->user()->id,
             'content' => $request->content,
         ]);
-        
+
         return Redirect::to('/confessions/' . $confession->id . "#comment");
     }
 

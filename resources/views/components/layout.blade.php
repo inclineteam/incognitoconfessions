@@ -25,6 +25,7 @@
 </head>
 
 <body class="antialiased">
+    @include('cookie-consent::index')
     <x-flash-message />
 
     {{ $slot }}
