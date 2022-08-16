@@ -32,9 +32,9 @@
                             @csrf
                             @method("PUT")
                             @if (in_array(auth()->user()->id, $confession->reacts_users))
-                                <button class="w-[4rem] rounded-full flex justify-center items-center h-[1.7rem] font-thin text-[1rem] text-white/50 bg-[#616161]"><img src="/images/heart.png" class="p-1" />{{ $confession->reacts }}</img></button>
+                                <button class="w-[4rem] rounded-full flex justify-center items-center h-[1.7rem] font-thin text-[1rem] text-white/50 bg-[#616161]"><img src="/images/heart-2.png" class="p-1 h-[1.7rem]" />{{ $confession->reacts }}</img></button>
                             @else
-                                <button class="w-[4rem] rounded-full flex justify-center items-center h-[1.7rem] font-thin text-[1rem] text-white/50 bg-[#373737]"><img src="/images/heart.png" class="p-1" />{{ $confession->reacts }}</img></button>
+                                <button class="w-[4rem] rounded-full flex justify-center items-center h-[1.7rem] font-thin text-[1rem] text-white/50 bg-[#373737]"><img src="/images/heart.png" class="p-1 h-[1.7rem]" />{{ $confession->reacts }}</img></button>
                             @endif
                             
                         </form>
