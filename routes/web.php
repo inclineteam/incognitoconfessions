@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AccountDeletionController;
 use App\Http\Controllers\ConfessionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingController;
@@ -79,5 +80,9 @@ Route::post('/confessions/{confession}/reply', [ConfessionController::class, "re
 Route::get('/profile/show', [UpdateCredentialsController::class, "show"])->name('profile.show');
 // Show edit credentials page
 Route::put('/profile/edit', [UpdateCredentialsController::class, "update"])->name('profile.edit');
+
+Route::get('delete-account', [AccountDeletionController::class, 'create'])->name('account.delete');
+
+Route::delete('delete-account/{user}', [AccountDeletionController::class, 'delete'])->name('acount.destroy');
 
 require __DIR__ . '/auth.php';

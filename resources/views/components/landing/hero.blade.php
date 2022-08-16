@@ -8,10 +8,10 @@
             </span> them
             <span
                 class="bg-shark-lighter relative my-2 inline-block rounded-lg px-2 py-1 text-[#FFFBD7] shadow-xl md:my-4 md:px-4 md:py-3">
-                having to know
+                knowing
 
                 <span
-                    class="absolute top-full left-1/2 mt-3 hidden -translate-x-1/2 text-sm font-normal tracking-normal text-zinc-400 lg:flex items-center space-x-3">
+                    class="absolute top-full left-1/2 mt-3 ml-8 hidden w-[100%] -translate-x-1/2 text-sm font-normal tracking-normal text-zinc-400 lg:flex items-center space-x-3">
                     <i class="ai-check"></i>
                     <span>Confessions are anonymous</span>
                 </span>
@@ -20,12 +20,12 @@
         </h1>
     </div>
 
-    <p class="mt-10 mb-14 text-base text-zinc-400 lg:my-20 lg:text-xl">
+    <p class="mt-5 mb-10 text-base text-zinc-400 lg:my-14 lg:text-xl">
         Volutpat ac tincidunt vitae semper quis lectus nulla
         at volutpat.
     </p>
 
-    <div class="flex flex-wrap items-center space-x-4 md:space-x-8">
+    <div class="flex flex-wrap items-center mt-[3rem] sm:mt-[8rem] space-x-4 md:space-x-8">
         <a href="{{ route('login') }}">
             <button
                 class="rounded-md border-t border-indigo-500 bg-indigo-600 px-6 py-4 text-sm font-medium text-white lg:text-base">
