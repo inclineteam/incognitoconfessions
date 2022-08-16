@@ -11,7 +11,7 @@
                             @method("DELETE")
                             <button class="w-[2rem] rounded-full flex justify-end h-[1.5rem] font-thin text-[1rem] text-white/50"><img src="/images/delete.png" class="h-[1.5rem] w-[1.5rem]" /></img></button>
                         </form>
-                        <p class="text-white text-[0.9rem] text-end">Anonymous - {{ $reply->user_id }}</p>
+                        <p class="text-white flex items-center text-[0.9rem] text-end">Anonymous - <span class="text-[0.6rem] ml-1">{{ $reply->user_id }}</span></p>
 
                     </div>
                     

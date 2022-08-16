@@ -8,7 +8,10 @@
                 ">About</a></li>
                 <li class="flex mt-4"><a href="
                     {{ route('privacy') }}
-                ">Privacy</a></li>
+                ">Privacy Policy</a></li>
+                <li class="flex mt-4"><a href="
+                    {{ route('privacy') }}
+                ">Terms Of Use</a></li>
             </ul>
         </div>
 

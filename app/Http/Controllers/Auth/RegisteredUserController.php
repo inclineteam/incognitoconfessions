@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\Rules\Password;
 
 class RegisteredUserController extends Controller
@@ -16,8 +17,12 @@ class RegisteredUserController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
+    public function create(Request $request)
     {
+        if($request->cookie('laravel_cookie_consent') == null){
+            // do not let user in if cookie consent is not accepted
+            return Redirect::to('/cookie');
+        }
         return view('pages.auth.register');
     }
 

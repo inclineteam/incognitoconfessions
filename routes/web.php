@@ -35,6 +35,9 @@ Route::get('/report', [LandingController::class, "discord"])->name("report");
 // redirect to source code github
 Route::get('/source', [LandingController::class, "source"])->name("source");
 
+// show cookie page
+Route::get('/cookie', [ConfessionController::class, "cookie"])->name("cookie");
+
 // --------------------------------------------------------------
 
 // Show home page
@@ -62,6 +65,7 @@ Route::delete('/confessions/{confession}/delete', [ConfessionController::class, 
 Route::get('/confessions/{confession}', [ConfessionController::class, "confess"]);
 // react to confession
 Route::put('/confessions/{confession}', [ConfessionController::class, "react"]);
+
 // delete
 Route::delete('/confessions/reply/{reply}', [ConfessionController::class, "delete"]);
 

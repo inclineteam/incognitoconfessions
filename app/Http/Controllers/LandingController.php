@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Confession;
+use Illuminate\Http\Request;
 
 class LandingController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // query first 15 confessions
         $confessions = Confession::orderBy('id', 'desc')->take(15)->get();
