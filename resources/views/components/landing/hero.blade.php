@@ -1,31 +1,37 @@
-<div class="mx-auto flex max-w-6xl flex-col items-center pt-16 pb-56">
+<div class="responsive-padding mx-auto flex max-w-6xl flex-col pt-20 pb-56 md:items-center md:pt-20">
     <div>
-        <div
-            class="mb-4 flex max-w-[25ch] items-center justify-center space-x-4 text-center text-7xl font-semibold tracking-tight text-zinc-300">
-            <span>Confess</span>
-            <span class="bg-shark-lighter block rounded-lg px-4 py-3 font-medium text-[#FFFBD7]">without</span>
-            <span>them</span>
-        </div>
-        <div
-            class="flex max-w-[25ch] items-center space-x-4 text-center text-7xl font-semibold tracking-tight text-zinc-300">
-            <div class="relative">
-                <div class="bg-shark-lighter rounded-lg px-4 py-4 font-medium text-[#FFFBD7]">having to know</div>
-                <div class="absolute top-full left-1/2 mt-3 flex -translate-x-1/2 items-center justify-center space-x-4">
-                    <i class="ai-check text-sm"></i>
-                    <p class='text-base font-normal tracking-normal text-white/50'>Confessions are anonymous</p>
-                </div>
-            </div>
-            <span>who you are.</span>
-        </div>
-    </div>
-    <p class="my-24 text-xl text-zinc-400">Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat.</p>
+        <h1
+            class="text-3xl font-semibold tracking-tight text-zinc-300 sm:text-5xl md:text-center md:text-6xl lg:text-7xl">
+            Confess
+            <span class="bg-shark-lighter inline-block rounded-lg px-2 py-1 text-[#FFFBD7] shadow-xl md:px-4 md:py-3">
+                without
+            </span> them
+            <span
+                class="bg-shark-lighter relative my-2 inline-block rounded-lg px-2 py-1 text-[#FFFBD7] shadow-xl md:my-4 md:px-4 md:py-3">
+                having to know
 
-    <div class="flex items-center space-x-10">
-        <button class="text-white">How does it work?</button>
+                <span
+                    class="absolute top-full left-1/2 mt-3 hidden -translate-x-1/2 text-sm font-normal tracking-normal text-zinc-400 lg:flex items-center space-x-3">
+                    <i class="ai-check"></i>
+                    <span>Confessions are anonymous</span>
+                </span>
+            </span>
+            who you are.
+        </h1>
+    </div>
+
+    <p class="mt-10 mb-14 text-base text-zinc-400 lg:my-20 lg:text-xl">
+        Volutpat ac tincidunt vitae semper quis lectus nulla
+        at volutpat.
+    </p>
+
+    <div class="flex flex-wrap items-center space-x-4 md:space-x-8">
         <a href="{{ route('login') }}">
-            <button class="rounded-md border-t border-indigo-500 bg-indigo-600 px-6 py-4 font-medium text-white">
+            <button
+                class="rounded-md border-t border-indigo-500 bg-indigo-600 px-6 py-4 text-sm font-medium text-white lg:text-base">
                 Write a confession
             </button>
         </a>
+        <button class="py-4 pl-2 text-sm font-medium text-white lg:text-base">How does it work?</button>
     </div>
 </div>
