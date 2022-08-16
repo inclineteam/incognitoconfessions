@@ -1,52 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+}
+
+.responsive-padding {
+    @apply px-4 sm:px-8 md:px-14 lg:px-20;
 }
 
 .bg-img {
-  background-image: url('../../public/images/background.png');
+    background-image: url("../../public/images/background.png");
 }
 
-.input-focus-styles { 
-  @apply border border-transparent focus-within:border-primary;
+.input-focus-styles {
+    @apply border border-transparent focus-within:border-primary;
 }
 
 .input-error-border {
-  @apply border border-red-500/50 focus-within:border-primary;
+    @apply border border-red-500/50 focus-within:border-primary;
 }
 
 .checkbox-input:checked ~ .custom-checkbox {
-  @apply !text-sky-400 !border-sky-500/30;
+    @apply !text-sky-400 !border-sky-500/30;
 }
 
 .form-control-errmsg {
-  @apply absolute top-full left-1/2 mt-4 w-full w-max -translate-x-1/2 scale-0 rounded bg-black/70 z-20 p-3 text-center text-sm text-white/70 before:absolute before:bottom-full before:left-1/2 before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-4 before:border-b-4 before:border-transparent before:border-b-black/60 before:content-['_'] group-focus-within:scale-100
+    @apply absolute top-full left-1/2 mt-4 w-full w-max -translate-x-1/2 scale-0 rounded bg-black/70 z-20 p-3 text-center text-sm text-white/70 before:absolute before:bottom-full before:left-1/2 before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-4 before:border-b-4 before:border-transparent before:border-b-black/60 before:content-['_'] group-focus-within:scale-100;
 }
 
 .bg-img {
-  background-image: url('../../public/images/background.png');
+    background-image: url("../../public/images/background.png");
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #363738;
-  border-radius: 9999px;
+    background: #363738;
+    border-radius: 9999px;
 }
 
 input:focus {
-  outline:none;
+    outline: none;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1B1C21;
+    background: #1b1c21;
 }
 
-[x-cloak] { display: none !important; }
+[x-cloak] {
+    display: none !important;
+}
