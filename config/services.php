@@ -1,6 +1,7 @@
 <?php
 
 return [
+
     /*
     |--------------------------------------------------------------------------
     | Third Party Services
@@ -47,10 +48,4 @@ return [
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
         'redirect' => 'http://localhost:8000/auth/callback/facebook',
     ],
-    '<provider>' => [
-        'client_id' => env('<PROVIDER>_CLIENT_ID'),
-        'client_secret' => env('<PROVIDER>_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000/auth/callback/<provider>',
-    ],
-
 ];

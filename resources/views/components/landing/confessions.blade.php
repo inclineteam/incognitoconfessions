@@ -1,59 +1,27 @@
+@props(['confessions' => $confessions])
+
 <div class="-mt-20 pb-56">
-    <div class="relative">
-        <div class="absolute top-0 right-0 h-20 w-96 bg-gradient-to-b from-[#1B1C21]/0 to-[#1B1C21]"></div>
+    <div class="responsive-padding relative">
+        <div class="absolute -top-14 right-0 h-20 w-96 bg-gradient-to-b from-zinc-900/0 to-zinc-900"></div>
 
-        <div class="relative mx-auto max-w-6xl columns-3 gap-6">
-            <x-landing.confession-card
-                confession="Sit amet porttitor eget dolor morbi. Suspendisse faucibus interdum posuere lorem. Euismod in pellentesque massa placerat duis ultricies lacus.
-    
-Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien." />
+        <div class="relative mx-auto max-w-6xl columns-1 gap-6 sm:columns-2 lg:columns-3">
 
-            <x-landing.confession-card
-                confession="Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat. Habitant morbi tristique senectus et." />
+            @if (count($confessions) > 0)
 
-            <x-landing.confession-card
-                confession="Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat. Habitant morbi tristique senectus et." />
+                @foreach ($confessions as $confession)
+                    <x-landing.confession-card :confession="$confession" :date="Carbon\Carbon::parse($confession->created_at)->format('m/d/y')" />
+                @endforeach
 
-            <x-landing.confession-card
-                confession="Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat. Habitant morbi tristique senectus et." />
+            @endif
 
-            <x-landing.confession-card
-                confession="Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat. Habitant morbi tristique senectus et." />
-
-            <x-landing.confession-card
-                confession="Sit amet porttitor eget dolor morbi. Suspendisse faucibus interdum posuere lorem. Euismod in pellentesque massa placerat duis ultricies lacus." />
-
-            <x-landing.confession-card
-                confession="Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat. Habitant morbi tristique senectus et." />
-
-            <x-landing.confession-card
-                confession="Sit amet porttitor eget dolor morbi. Suspendisse faucibus interdum posuere lorem. Euismod in pellentesque massa placerat duis ultricies lacus.
-
-Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien." />
-
-            <x-landing.confession-card
-                confession="Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat. Habitant morbi tristique senectus et." />
-
-            <x-landing.confession-card
-                confession="Sit amet porttitor eget dolor morbi. Suspendisse faucibus interdum posuere lorem. Euismod in pellentesque massa placerat duis ultricies lacus.
-    
-Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien." />
-
-            <x-landing.confession-card
-                confession="Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat. Habitant morbi tristique senectus et." />
-
-            <x-landing.confession-card
-                confession="Sit amet porttitor eget dolor morbi. Suspendisse faucibus interdum posuere lorem. Euismod in pellentesque massa placerat duis ultricies lacus.
-
-Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien." />
-
-            <x-landing.confession-card
-                confession="Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat. Habitant morbi tristique senectus et." />
         </div>
 
         <div
-            class="absolute bottom-0 flex h-96 w-full items-end justify-center bg-gradient-to-b from-[#1B1C21]/0 via-[#1B1C21]/80 to-[#1B1C21] pb-20">
-            <button class="rounded-md bg-[#3B50F9] px-6 py-4 font-medium text-white">View all confessions</button>
+            class="absolute bottom-0 right-0 left-0 flex h-96 items-end justify-center bg-gradient-to-b from-zinc-900/0 via-zinc-900/80 to-zinc-900 pb-20">
+            <a href={{ route('confessions') }}
+                class="text-sm lg:text-base rounded-md border-t border-indigo-500 bg-indigo-600 px-6 py-4 font-medium text-white">
+                View all confessions
+            </a>
         </div>
     </div>
 </div>

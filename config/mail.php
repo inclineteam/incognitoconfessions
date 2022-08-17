@@ -44,7 +44,7 @@ return [
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
             'driver' => env('MAIL_DRIVER', 'smtp'),
-            'from' => ['address' => '<gmail-address>', 'name' => 'Do Not Reply'],
+            'from' => ['address' => 'incognitoconfessions@gmail.com', 'name' => 'Do Not Reply'],
             'sendmail' => '/usr/sbin/sendmail -bs',
         ],
 

@@ -18,7 +18,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'provider',
         'name',
+        'banned',
         'email',
         'password',
     ];
@@ -30,6 +32,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
+        'provider',
         'remember_token',
     ];
 
@@ -41,4 +44,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // one user can have many confessions
+    public function confessions()
+    {
+        return $this->hasMany(Confession::class, 'user_id');
+    }
+
+    public function confessionLimit()
+    {
+        return $this->hasOne(ConfessionLimit::class, 'user_id');
+    }
 }
