@@ -8,7 +8,7 @@
 
         <button type="submit"
                 class="w-max mt-7 rounded border-t border-red-700 bg-red-500 py-3 px-4 font-medium text-white duration-150">
-                Reset Password
+                Delete Account
         </button>
     </form>
 </x-auth-layout>

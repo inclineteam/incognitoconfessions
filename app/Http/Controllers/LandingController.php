@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Confession;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class LandingController extends Controller
 {
     public function index(Request $request)
     {
         // query first 15 confessions
-        $confessions = Confession::orderBy('id', 'desc')->take(15)->get();
+        $confessions = Cache::remember('confession', 60, function () {
+            return Confession::orderBy('id', 'desc')->take(15)->get();
+        });
         return view('pages.landing', ["confessions" => $confessions]);
     }
 
