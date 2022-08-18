@@ -21,14 +21,14 @@ class ConfessionController extends Controller
     public function index(Request $request)
     {
 
+        $confessions = Cache::remember('confession', 30, function () {
+            return Confession::latest()->filter(request(['search']))->paginate(15);
+        });
+
         if($request->cookie('laravel_cookie_consent') == null){
             // do not let user in if cookie consent is not accepted
             return Redirect::to('/cookie');
         }
-        
-        $confessions = Cache::remember('confession', 30, function () {
-            return Confession::latest()->filter(request(['search']))->paginate(15);
-        });
 
         // if there is sort query in request, sort the items, else, get latest items
         if (request('sort')) {
