@@ -52,13 +52,28 @@
                                 </button>
                             </form>
                         @endif
+                        
+                        <!-- remove when oAuth is used -->
 
-                        <form method="GET" action="{{ route('profile.show') }}">
+                        @if (auth()->user()->provider == null)
+                            <form method="GET" action="{{ route('profile.show') }}">
+                                @csrf
+                                <button
+                                class="group flex w-full items-center justify-between space-x-4 px-8 py-1 text-left text-sm text-zinc-400 duration-150 hover:bg-zinc-800 hover:text-zinc-300">
+                                    <span>
+                                        Change Password
+                                    </span>
+                                    <i class="ai-lock-on text-lg text-zinc-500 duration-150 group-hover:text-zinc-300"></i>
+                                </button>
+                            </form>
+                        @endif
+
+                        <form method="GET" action="{{ route('account.delete') }}">
                             @csrf
                             <button
                             class="group flex w-full items-center justify-between space-x-4 px-8 py-1 text-left text-sm text-zinc-400 duration-150 hover:bg-zinc-800 hover:text-zinc-300">
                                 <span>
-                                    Change Password
+                                    Delete Account
                                 </span>
                                 <i class="ai-lock-on text-lg text-zinc-500 duration-150 group-hover:text-zinc-300"></i>
                             </button>
@@ -119,13 +134,28 @@
                             </button>
                         </form>
                     @endif
+                    
+                    <!-- remove when oAuth is used -->
+                    
+                    @if (auth()->user()->provider == null)
+                        <form method="GET" action="{{ route('profile.show') }}">
+                            @csrf
+                            <button
+                            class="group flex w-full items-center justify-between space-x-4 px-8 py-1 text-left text-sm text-zinc-400 duration-150 hover:bg-zinc-800 hover:text-zinc-300">
+                                <span>
+                                    Change Password
+                                </span>
+                                <i class="ai-lock-on text-lg text-zinc-500 duration-150 group-hover:text-zinc-300"></i>
+                            </button>
+                        </form>
+                    @endif
 
-                    <form method="GET" action="{{ route('profile.show') }}">
+                    <form method="GET" action="{{ route('account.delete') }}">
                         @csrf
                         <button
                         class="group flex w-full items-center justify-between space-x-4 px-8 py-1 text-left text-sm text-zinc-400 duration-150 hover:bg-zinc-800 hover:text-zinc-300">
                             <span>
-                                Change Password
+                                Delete Account
                             </span>
                             <i class="ai-lock-on text-lg text-zinc-500 duration-150 group-hover:text-zinc-300"></i>
                         </button>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AccountDeletionController;
 use App\Http\Controllers\ConfessionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingController;
@@ -35,6 +36,12 @@ Route::get('/report', [LandingController::class, "discord"])->name("report");
 // redirect to source code github
 Route::get('/source', [LandingController::class, "source"])->name("source");
 
+// show terms page
+Route::get('/terms', [LandingController::class, "terms"])->name("terms");
+
+// show cookie page
+Route::get('/cookie', [ConfessionController::class, "cookie"])->name("cookie");
+
 // --------------------------------------------------------------
 
 // Show home page
@@ -62,6 +69,7 @@ Route::delete('/confessions/{confession}/delete', [ConfessionController::class, 
 Route::get('/confessions/{confession}', [ConfessionController::class, "confess"]);
 // react to confession
 Route::put('/confessions/{confession}', [ConfessionController::class, "react"]);
+
 // delete
 Route::delete('/confessions/reply/{reply}', [ConfessionController::class, "delete"]);
 
@@ -72,5 +80,9 @@ Route::post('/confessions/{confession}/reply', [ConfessionController::class, "re
 Route::get('/profile/show', [UpdateCredentialsController::class, "show"])->name('profile.show');
 // Show edit credentials page
 Route::put('/profile/edit', [UpdateCredentialsController::class, "update"])->name('profile.edit');
+
+Route::get('delete-account', [AccountDeletionController::class, 'create'])->name('account.delete');
+
+Route::delete('delete-account/{user}', [AccountDeletionController::class, 'delete'])->name('acount.destroy');
 
 require __DIR__ . '/auth.php';

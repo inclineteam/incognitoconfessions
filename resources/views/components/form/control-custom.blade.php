@@ -5,9 +5,7 @@
             value="{{ $defaultValue != '' ? $defaultValue : old($name) }}" name="{{ $name }}" placeholder="{{ $placeholder }}"
             class="input-error-border p-3 {{ $bgInput }} block w-full rounded-full  text-white/80 !outline-none duration-150"
             autocomplete="{{ $type == 'password' ? 'new-password' : 'off' }}" />
-
-        <div class="form-control-errmsg">
-            {{ $message }}</div>
+        <div class="form-control-errmsg">{{ $message }}</div>
     @else
         <input type="{{ $type }}" id="{{ $name }}"
             value="{{ $defaultValue != '' ? $defaultValue : old($name) }}" name="{{ $name }}" placeholder="{{ $placeholder }}"

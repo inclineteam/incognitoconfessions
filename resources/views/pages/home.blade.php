@@ -19,22 +19,25 @@
                         <div class="flex flex-col
                         lg:flex-row
                         items-center space-x-4">
-                            <a href="{{ route('confession.create') }}">
-                                <button
-                                    class="flex items-center space-x-2 xl:ml-0 lg:ml-0 md:ml-4 ml-4 sm:ml-4 rounded-md bg-indigo-900/20 px-4 py-3 font-medium hover:bg-indigo-900/30">
-                                    <i class="ai-plus text-indigo-500"></i>
-                                    <span class="text-indigo-400">Write a confession</span>
-                                </button>
-                            </a>
-                            <div class="flex items-center space-x-3 rounded px-4 py-3">
-                                {{-- <i class="ai-send text-zinc-500"></i> --}}
-                                <span class="text-zinc-400">You've made {{ $confessions->count() }} @if (count($confessions) > 1)
-                                        confessions
-                                    @else
-                                        confession
-                                    @endif
-                                </span>
-                            </div>
+                            @if (auth()->user()->email_verified_at != null)
+                                <a href="{{ route('confession.create') }}">
+                                    <button
+                                        class="flex items-center space-x-2 xl:ml-0 lg:ml-0 md:ml-4 ml-4 sm:ml-4 rounded-md bg-indigo-900/20 px-4 py-3 font-medium hover:bg-indigo-900/30">
+                                        <i class="ai-plus text-indigo-500"></i>
+                                        <span class="text-indigo-400">Write a confession</span>
+                                    </button>
+                                </a>
+
+                                <div class="flex items-center space-x-3 rounded px-4 py-3">
+                                    {{-- <i class="ai-send text-zinc-500"></i> --}}
+                                    <span class="text-zinc-400">You've made {{ $confessions->count() }} @if (count($confessions) > 1)
+                                            confessions
+                                        @else
+                                            confession
+                                        @endif
+                                    </span>
+                                </div>
+                            @endif
                         </div>
                     </div>
 
@@ -48,13 +51,19 @@
                             @endforeach
                         </x-home.conditional-columns>
                     @else
-                        <div class="pt-10 text-center">
-                            <p class="mb-10 text-2xl font-medium text-zinc-400">You haven't wrote a confession</p>
-                            <a href="{{ route('confession.create') }}"
-                                class="mx-auto block w-max rounded border border-zinc-800 px-4 py-3 font-medium text-indigo-400 hover:bg-zinc-800/20">
-                                Write one
-                            </a>
-                        </div>
+                        @if (auth()->user()->email_verified_at != null)
+                            <div class="pt-10 text-center">
+                                <p class="mb-10 text-2xl font-medium text-zinc-400">You haven't wrote a confession</p>
+                                <a href="{{ route('confession.create') }}"
+                                    class="mx-auto block w-max rounded border border-zinc-800 px-4 py-3 font-medium text-indigo-400 hover:bg-zinc-800/20">
+                                    Write one
+                                </a>
+                            </div>
+                        @else
+                            <div class="pt-10 text-center">
+                                <p class="mb-10 text-2xl font-medium text-zinc-400">Please Verify your Email</p>
+                            </div>
+                        @endif
                     @endif
                 </div>
             @endif
