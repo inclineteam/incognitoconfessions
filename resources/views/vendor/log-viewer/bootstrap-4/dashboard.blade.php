@@ -99,19 +99,3 @@
         </div>
     </div>
 @endsection
-
-@section('scripts')
-    <script>
-        $(function() {
-            new Chart(document.getElementById("stats-doughnut-chart"), {
-                type: 'doughnut',
-                data: {!! $chartData !!},
-                options: {
-                    legend: {
-                        position: 'bottom'
-                    }
-                }
-            });
-        });
-    </script>
-@endsection

@@ -12,7 +12,7 @@
 
             <div class="flex h-full justify-center items-center">
                 <div class="flex mt-[5rem] lg:hidden h-full flex-col items-center justify-center">
-                    <img class="mr-4 opacity-50" src="images/letter.png">
+                    <img class="mr-4 opacity-50" src="/images/letter.png">
                     <p class="text-white/50">Please use a desktop to open admin panel</p>
                     <p class="p-2 text-sm font-extralight text-white opacity-30">
                         Open mo na yan AHAHAHAHAHA
@@ -29,10 +29,6 @@
                 </div>
 
                 {{-- Scripts --}}
-                <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 
                 @yield('modals')
                 @yield('scripts')

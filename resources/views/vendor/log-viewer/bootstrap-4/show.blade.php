@@ -134,44 +134,7 @@
                                         <td class="py-4 px-6 text-center">
                                             <p class="break-all overflow-auto">{{ $entry->header }}</p>
                                         </td>
-                                        {{-- <td class="text-right">
-                                            @if ($entry->hasStack())
-                                            <button @click="profileDropdown{{ $key }} != true ? profileDropdown{{ $key }} = true : profileDropdown{{ $key }} = false" class="group flex items-center space-x-2 font-medium">
-                                                <img src="/images/delete.png" alt="">@lang('Stack')
-                                            </button>
-
-                                            @endif
-    
-                                            @if ($entry->hasContext())
-                                            <button @click="profileDropdown = !profileDropdown"
-                                                class="group flex items-center space-x-2 font-medium">
-                                                <img src="/images/delete.png" alt="">@lang('Context')
-                                            </button>
-                                            @endif
-                                        </td> --}}
                                     </tr>
-                                    {{-- @if ($entry->hasStack() || $entry->hasContext())
-                                        <tr>
-                                            <td colspan="5" class="stack py-0">
-                                                @if ($entry->hasStack())
-                                                <div @click.outside="profileDropdown{{ $key }} = false"
-                                                class="absolute right-0 z-40 mt-7 mr-5 w-[22rem] rounded-xl border border-zinc-800 bg-zinc-900 py-4 shadow-xl shadow-black/50"
-                                                x-show="profileDropdown{{ $key }}" x-transition x-cloak>
-                                                    <div>
-                                                        {!! $entry->stack() !!}
-                                                    </div>
-                                                </div>
-                                                
-                                                @endif
-    
-                                                @if ($entry->hasContext())
-                                                <div class="stack-content" id="log-context-{{ $key }}">
-                                                    <pre>{{ $entry->context() }}</pre>
-                                                </div>
-                                                @endif
-                                            </td>
-                                        </tr>
-                                    @endif --}}
                                 </div>
                             @empty
                                 <tr>
