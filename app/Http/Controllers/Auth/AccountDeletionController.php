@@ -48,4 +48,10 @@ class AccountDeletionController extends Controller
 
         return redirect('/');
     }
+
+    public function ban(){
+        $user = User::find(auth()->user()->id);
+        $user->ban();
+        return redirect('/');
+    }
 }

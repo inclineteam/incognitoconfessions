@@ -12,7 +12,7 @@
 
 
             <div>
-                <div class="container-fluid">
+                <div class="container-fluid mx-auto">
                     <main role="main" class="pt-3">
                         @yield('content')
                     </main>
