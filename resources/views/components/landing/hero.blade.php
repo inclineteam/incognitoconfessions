@@ -31,6 +31,6 @@
                 Write a confession
             </button>
         </a>
-        <button class="py-4 pl-2 text-sm font-medium text-white lg:text-base">How does it work?</button>
+        <a href="{{ route('about') }}" class="py-4 pl-2 text-sm font-medium text-white lg:text-base">How does it work?</a>
     </div>
 </div>
