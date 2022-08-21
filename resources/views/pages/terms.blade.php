@@ -190,9 +190,9 @@
                             </h2>
                             <p class="py-2">In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at:</p>
                         <p class="py-2 text-start">
-                        Incline, <br>
+                        Incline,
                         Philippines <br>
-                        <a href="mailto:inclineteam@gmail.com">inclineteam@gmail.com</a> <br>
+                        <a href="mailto:inclineteams@gmail.com">inclineteams@gmail.com</a> <br>
                         <span class="font-medium">These terms of use were created using <a href="app.termly.io">Termly's Terms and Conditions Generator.</a></span>
                         </p> <br>
                         </div>

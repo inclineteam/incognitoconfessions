@@ -165,7 +165,7 @@
                         <h6 class="font-semibold text-lg">Account Information</h6>
                         <p class="py-2">If you would at any time like to review or change the information in your account or terminate your account, you can: Log in to your account settings and update your user account. Upon your request to terminate your account, we will deactivate or delete your account and information from our active databases. However, we may retain some information in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our legal terms and/or comply with applicable legal requirements.</p>
                         <p class="py-2">Cookies and similar technologies: Most Web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services of our Services. To opt out of interest-based advertising by advertisers on our Services visit <a href="http://www.aboutads.info/choices/" target="_blank"></a> http://www.aboutads.info/choices/ .</p>
-                        <p class="py-2">If you have questions or comments about your privacy rights, you may email us at <a href="mailto:inclineteam@gmail.com">inclineteam@gmail.com</a> .
+                        <p class="py-2">If you have questions or comments about your privacy rights, you may email us at <a href="mailto:inclineteam@gmail.com">inclineteams@gmail.com</a> .
                     </div>
                     <div id="9">
                         <h2 class="font-bold text-xl py-2">9. CONTROLS FOR DO-NOT-TRACK FEATURES</h2>
@@ -185,7 +185,7 @@
                     <div id="12">
                         <h2 class="font-bold text-xl py-2">12. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2>
                             <p class="italic py-2"><span class="font-bold"> In Short:</span>
-                        <p class="py-2">If you have questions or comments about this notice, you may email us at <a href="mailto:inclineteam@gmail.com">inclineteam@gmail.com</a></p>
+                        <p class="py-2">If you have questions or comments about this notice, you may email us at <a href="mailto:inclineteams@gmail.com">inclineteams@gmail.com</a></p>
                     </div>
                     <div id="8">
                             <h2 class="font-bold text-xl py-2">13. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</h2>
