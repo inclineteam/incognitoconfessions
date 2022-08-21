@@ -79,6 +79,19 @@
                             </button>
                         </form>
 
+                        @if (auth()->user()->is_admin == 1)
+                            <form method="GET" action="{{ route('admin') }}">
+                                @csrf
+                                <button
+                                class="group flex w-full items-center justify-between space-x-4 px-8 py-1 text-left text-sm text-zinc-400 duration-150 hover:bg-zinc-800 hover:text-zinc-300">
+                                    <span>
+                                        Admin Panel
+                                    </span>
+                                    <i class="ai-lock-on text-lg text-zinc-500 duration-150 group-hover:text-zinc-300"></i>
+                                </button>
+                            </form>
+                        @endif
+
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button
@@ -160,6 +173,19 @@
                             <i class="ai-lock-on text-lg text-zinc-500 duration-150 group-hover:text-zinc-300"></i>
                         </button>
                     </form>
+
+                    @if (auth()->user()->is_admin == 1)
+                        <form method="GET" action="{{ route('admin') }}">
+                            @csrf
+                            <button
+                            class="group flex w-full items-center justify-between space-x-4 px-8 py-1 text-left text-sm text-zinc-400 duration-150 hover:bg-zinc-800 hover:text-zinc-300">
+                                <span>
+                                        Admin Panel
+                                </span>
+                                <i class="ai-lock-on text-lg text-zinc-500 duration-150 group-hover:text-zinc-300"></i>
+                            </button>
+                        </form>
+                    @endif
 
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

@@ -21,8 +21,7 @@
     </div>
 
     <p class="mt-5 mb-10 text-base text-zinc-400 lg:my-14 lg:text-xl">
-        Volutpat ac tincidunt vitae semper quis lectus nulla
-        at volutpat.
+        A confession board for those who want to vent out their feelings
     </p>
 
     <div class="flex flex-wrap items-center mt-[3rem] sm:mt-[8rem] space-x-4 md:space-x-8">
@@ -32,6 +31,6 @@
                 Write a confession
             </button>
         </a>
-        <button class="py-4 pl-2 text-sm font-medium text-white lg:text-base">How does it work?</button>
+        <a href="{{ route('about') }}" class="py-4 pl-2 text-sm font-medium text-white lg:text-base">How does it work?</a>
     </div>
 </div>
