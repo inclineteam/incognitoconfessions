@@ -48,7 +48,7 @@ class LandingController extends Controller
     public function report()
     {
         // redirect
-        return redirect()->to('report'); 
+        return redirect()->back(); 
     }
 
     public function source()
