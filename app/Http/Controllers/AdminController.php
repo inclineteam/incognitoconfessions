@@ -63,6 +63,10 @@ class AdminController extends Controller
         $chartData = $this->prepareChartData($stats);
         $percents  = $this->calcPercentages($stats->footer(), $stats->header());
 
+        if(auth()->user() == null){
+            return redirect()->back();
+        }
+
         if(auth()->user()->is_admin == 0){
             return redirect()->back();
         }
@@ -82,6 +86,10 @@ class AdminController extends Controller
         $stats   = $this->logViewer->statsTable();
         $headers = $stats->header();
         $rows    = $this->paginate($stats->rows(), $request);
+
+        if(auth()->user() == null){
+            return redirect()->back();
+        }
 
         if(auth()->user()->is_admin == 0){
             return redirect()->back();
@@ -105,6 +113,10 @@ class AdminController extends Controller
         $query   = $request->get('query');
         $levels  = $this->logViewer->levelsNames();
         $entries = $log->entries($level)->paginate($this->perPage);
+
+        if(auth()->user() == null){
+            return redirect()->back();
+        }
 
         if(auth()->user()->is_admin == 0){
             return redirect()->back();
@@ -131,6 +143,10 @@ class AdminController extends Controller
         $query   = $request->get('query');
         $levels  = $this->logViewer->levelsNames();
         $entries = $this->logViewer->entries($date, $level)->paginate($this->perPage);
+
+        if(auth()->user() == null){
+            return redirect()->back();
+        }
 
         if(auth()->user()->is_admin == 0){
             return redirect()->back();
@@ -173,6 +189,10 @@ class AdminController extends Controller
             })
             ->paginate($this->perPage);
 
+        if(auth()->user() == null){
+            return redirect()->back();
+        }
+
         if(auth()->user()->is_admin == 0){
             return redirect()->back();
         }
@@ -211,8 +231,8 @@ class AdminController extends Controller
     }
 
     /* -----------------------------------------------------------------
-     |  Other Methods
-     | -----------------------------------------------------------------
+    |  Other Methods
+    | -----------------------------------------------------------------
      */
 
     /**
@@ -227,6 +247,10 @@ class AdminController extends Controller
     protected function view($view, $data = [], $mergeData = [])
     {
         $theme = config('log-viewer.theme');
+
+        if(auth()->user() == null){
+            return redirect()->back();
+        }
 
         if(auth()->user()->is_admin == 0){
             return redirect()->back();

@@ -68,7 +68,9 @@
                             <div class="">
                                 <span >Unban User</span>
                             </div>
-                            <form class="flex justify-center mt-5 flex-col">
+                            <form method="POST" action="unban" class="flex justify-center mt-5 flex-col">
+                                @csrf
+                                @method('PUT')
                                 <x-form.control-custom name='ban' value='' class="w-[20rem]"  placeholder='enter user Id to unban' bgInput="bg-zinc-600" />
                                 <div class='w-[100%] flex justify-center'>
                                     <button class="p-3 w-[70%] bg-zinc-700 mt-5 rounded-md ">Submit</button>
@@ -79,7 +81,9 @@
                             <div class="">
                                 <span >Ban User</span>
                             </div>
-                            <form class="flex justify-center mt-5 flex-col">
+                            <form method="POST" action="ban" class="flex justify-center mt-5 flex-col">
+                                @csrf
+                                @method('PUT')
                                 <x-form.control-custom name='ban' value='' class="w-[20rem]"  placeholder='enter user Id to ban' bgInput="bg-zinc-600" />
                                 <div class='w-[100%] flex justify-center'>
                                     <button class="p-3 w-[70%] bg-zinc-700 mt-5 rounded-md ">Submit</button>
@@ -94,20 +98,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('scripts')
-    <script>
-        $(function() {
-            new Chart(document.getElementById("stats-doughnut-chart"), {
-                type: 'doughnut',
-                data: {!! $chartData !!},
-                options: {
-                    legend: {
-                        position: 'bottom'
-                    }
-                }
-            });
-        });
-    </script>
 @endsection

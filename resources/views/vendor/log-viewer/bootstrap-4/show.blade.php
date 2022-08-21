@@ -40,14 +40,6 @@
             <div class="card mb-4">
                 <div class="card-header p-3 flex">
                     <p>Log Info :</p>
-                    <div class="group-btns flex pull-right">
-                        <a href="{{ route('log-viewer::logs.download', [$log->date]) }}" class="btn mx-1 btn-sm btn-success">
-                            <img src="/images/download.png" alt="">
-                        </a>
-                        <a href="#delete-log-modal" class="btn mx-1 btn-sm btn-danger" data-toggle="modal">
-                            <img src="/images/delete.png" alt="">
-                        </a>
-                    </div>
                 </div>
                 <div class="table-responsive mx-2">
                     <table class="table table-condensed mb-0">
@@ -78,6 +70,29 @@
                     </table>
                 </div>
 
+                <div class="flex item-center items-center mt-5 space-x-6">
+                    {{-- Search --}}
+                    <div class="input-focus-styles hidden xlg:inline rounded-full bg-zinc-800 px-2 py-1 duration-150">
+                        <form class="flex items-center space-x-4" action="{{ route('log-viewer::logs.search', [$log->date, $level]) }}" method="GET">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input id="query" name="query" class="select-none bg-transparent py-1 pl-4 text-sm text-zinc-400 placeholder:text-zinc-500" value="{{ $query }}" placeholder="@lang('Type here to search')">
+                                    <button type="submit" class="rounded-full px-2 py-1 hover:bg-zinc-700/40">
+                                        <i class="ai-search text-zinc-400"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="flex">
+                        @unless (is_null($query))
+                            <a href="{{ route('log-viewer::logs.show', [$log->date]) }}" class="btn text-center btn-secondary">
+                                (@lang(':count results', ['count' => $entries->count()])) <i class="fa fa-fw fa-times"></i>
+                            </a>
+                        @endunless
+                    </div>
+                </div>
+
             {{-- Log Entries --}}
             <div class="card mb-4 mt-4">
                 @if ($entries->hasPages())
@@ -96,61 +111,31 @@
                                 <th class="py-4 px-3"">@lang('Level')</th>
                                 <th class="py-4 px-3">@lang('Time')</th>
                                 <th class="py-4 text-center">@lang('Header')</th>
-                                <th class="py-4 text-center">@lang('Actions')</th>
+                                {{-- <th class="py-4 text-center">@lang('Actions')</th> --}}
                             </tr>
                         </thead>
                         <tbody>
                             @forelse($entries as $key => $entry)
-                                <tr>
-                                    <td class="py-4 px-6">
-                                        <span class="badge badge-env">{{ $entry->env }}</span>
-                                    </td>
-                                    <td class="py-4 px-6">
-                                        <span class="badge badge-level-{{ $entry->level }}">
-                                            {!! $entry->level() !!}
-                                        </span>
-                                    </td>
-                                    <td class="py-4 px-6">
-                                        <span class="badge badge-secondary">
-                                            {{ $entry->datetime->format('H:i:s') }}
-                                        </span>
-                                    </td>
-                                    <td class="py-4 px-6 text-center">
-                                        <p class="break-all overflow-auto">{{ $entry->header }}</p>
-                                    </td>
-                                    <td class="text-right">
-                                        @if ($entry->hasStack())
-                                        <a class="btn btn-sm btn-light" role="button" data-toggle="collapse"
-                                            href="#log-stack-{{ $key }}" aria-expanded="false" aria-controls="log-stack-{{ $key }}">
-                                            <img src="/images/delete.png" alt="">@lang('Stack')
-                                        </a>
-                                        @endif
-
-                                        @if ($entry->hasContext())
-                                        <a class="btn btn-sm btn-light" role="button" data-toggle="collapse"
-                                            href="#log-context-{{ $key }}" aria-expanded="false" aria-controls="log-context-{{ $key }}">
-                                            <img src="/images/delete.png" alt=""> @lang('Context')
-                                        </a>
-                                        @endif
-                                    </td>
-                                </tr>
-                                @if ($entry->hasStack() || $entry->hasContext())
+                                <div x-data="{ profileDropdown{{ $key }}: false }">
                                     <tr>
-                                        <td colspan="5" class="stack py-0">
-                                            @if ($entry->hasStack())
-                                            <div class="stack-content hidden" id="log-stack-{{ $key }}">
-                                                {!! $entry->stack() !!}
-                                            </div>
-                                            @endif
-
-                                            @if ($entry->hasContext())
-                                            <div class="stack-content hidden" id="log-context-{{ $key }}">
-                                                <pre>{{ $entry->context() }}</pre>
-                                            </div>
-                                            @endif
+                                        <td class="py-4 px-6">
+                                            <span class="badge badge-env">{{ $entry->env }}</span>
+                                        </td>
+                                        <td class="py-4 px-6">
+                                            <span class="badge badge-level-{{ $entry->level }}">
+                                                {!! $entry->level() !!}
+                                            </span>
+                                        </td>
+                                        <td class="py-4 px-6">
+                                            <span class="badge badge-secondary">
+                                                {{ $entry->datetime->format('H:i:s') }}
+                                            </span>
+                                        </td>
+                                        <td class="py-4 px-6 text-center">
+                                            <p class="break-all overflow-auto">{{ $entry->header }}</p>
                                         </td>
                                     </tr>
-                                @endif
+                                </div>
                             @empty
                                 <tr>
                                     <td colspan="5" class="text-center">

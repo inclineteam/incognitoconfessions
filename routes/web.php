@@ -85,6 +85,9 @@ Route::put('/profile/edit', [UpdateCredentialsController::class, "update"])->nam
 
 Route::get('delete-account', [AccountDeletionController::class, 'create'])->name('account.delete');
 
+Route::put('ban', [AccountDeletionController::class, 'ban'])->name('account.ban');
+Route::put('unban', [AccountDeletionController::class, 'unban'])->name('account.unban');
+
 Route::delete('delete-account/{user}', [AccountDeletionController::class, 'delete'])->name('acount.destroy');
 
 Route::get('admin', [AdminController::class, 'index'])->name('admin');
