@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Confession;
 use App\Models\ConfessionLimit;
 use App\Models\Replies;
-use App\Models\ReplyLimits;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
@@ -20,7 +20,10 @@ class ConfessionController extends Controller
 
     public function index(Request $request)
     {
-        $confessions = [];
+
+        $confessions = Cache::remember('confession', 30, function () {
+            return Confession::latest()->filter(request(['search']))->paginate(15);
+        });
 
         if($request->cookie('laravel_cookie_consent') == null){
             // do not let user in if cookie consent is not accepted
@@ -29,14 +32,21 @@ class ConfessionController extends Controller
 
         // if there is sort query in request, sort the items, else, get latest items
         if (request('sort')) {
-            $confessions = Confession::get()->sortBy(request('sort'))->paginate(15);
+            $confessions = Cache::remember('confession', 30, function () {
+                return Confession::get()->sortBy(request('sort'))->paginate(15);
+            });
         } else {
-            $confessions = Confession::latest()->filter(request(['search']))->paginate(15);
+            $confessions = Cache::remember('confession', 30, function () {
+                return Confession::latest()->filter(request(['search']))->paginate(15);
+            });
         }
 
         // if sort query is equals to latest, get latest items
+        
         if (request('sort') === 'latest') {
-            $confessions = Confession::latest()->filter(request(['search']))->paginate(15);
+            $confessions = Cache::remember('confession', 30, function () {
+                return Confession::latest()->filter(request(['search']))->paginate(15);
+            });
         }
 
         return view('pages.confessions', ["confessions" => $confessions]);

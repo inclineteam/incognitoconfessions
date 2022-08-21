@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Confession;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class LandingController extends Controller
 {
     public function index(Request $request)
     {
         // query first 15 confessions
-        $confessions = Confession::orderBy('id', 'desc')->take(15)->get();
+        $confessions = Cache::remember('confession', 60, function () {
+            return Confession::orderBy('id', 'desc')->take(15)->get();
+        });
         return view('pages.landing', ["confessions" => $confessions]);
     }
 
@@ -24,6 +27,12 @@ class LandingController extends Controller
         return view('pages.about');
     }
 
+    public function terms()
+    {
+        // redirect
+        return view('pages.terms'); 
+    }
+
     public function discord()
     {
         // redirect
@@ -33,13 +42,7 @@ class LandingController extends Controller
     public function facebook()
     {
         // redirect
-        return redirect()->back(); 
-    }
-
-    public function github()
-    {
-        // redirect
-        return redirect()->back(); 
+        return redirect()->to('https://www.facebook.com/incognitoconfessions'); 
     }
 
     public function report()
@@ -51,6 +54,6 @@ class LandingController extends Controller
     public function source()
     {
         // redirect
-        return redirect()->back(); 
+        return redirect()->to('https://github.com/mmmsss211/Incognito-Confessions'); 
     }
 }

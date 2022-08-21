@@ -21,6 +21,57 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/akar-icons-fonts/src/css/akar-icons.css">
+    <style>
+        .main-footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background-color: #E8EAF6;
+        }
+
+        .main-footer p {
+            margin-bottom: 0;
+        }
+
+        .main-footer .fa.fa-heart {
+            color: #C62828;
+        }
+
+        .page-header {
+            border-bottom: 1px solid #8a8a8a;
+        }
+
+        /*
+        * Boxes
+        */
+
+        
+
+        /*
+        * Log Menu
+        */
+
+        .log-menu .list-group-item.disabled {
+            cursor: not-allowed;
+        }
+
+        .log-menu .list-group-item.disabled .level-name {
+            color: #D1D1D1;
+        }
+
+        /*
+        * Log Entry
+        */
+
+        .stack-content {
+            color: #AE0E0E;
+            font-family: consolas, Menlo, Courier, monospace;
+            white-space: pre-line;
+            font-size: .8rem;
+        }
+    </style>
     @vite('resources/css/app.css')
 </head>
 
