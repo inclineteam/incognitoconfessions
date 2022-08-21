@@ -27,6 +27,12 @@ class LandingController extends Controller
         return view('pages.about');
     }
 
+    public function terms()
+    {
+        // redirect
+        return view('pages.terms'); 
+    }
+
     public function discord()
     {
         // redirect
@@ -36,19 +42,13 @@ class LandingController extends Controller
     public function facebook()
     {
         // redirect
-        return redirect()->back(); 
+        return redirect()->to('https://www.facebook.com/incognitoconfessions'); 
     }
 
     public function report()
     {
         // redirect
-        return redirect()->back(); 
-    }
-
-    public function terms()
-    {
-        // redirect
-        return redirect()->back(); 
+        return redirect()->to('report'); 
     }
 
     public function source()
