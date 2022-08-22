@@ -175,7 +175,7 @@ class ConfessionController extends Controller
             ]);
         }
 
-        // add Log
+        // Log
         Log::info('User ' . auth()->user()->name . ' created a confession');
 
         return redirect()->route('home');
@@ -185,8 +185,6 @@ class ConfessionController extends Controller
     {
         $confession = Confession::find($id);
         $confession->delete();
-
-        // add Log
 
         return redirect()->route('home');
     }
