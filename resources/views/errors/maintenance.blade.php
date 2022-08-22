@@ -10,7 +10,7 @@
 
         <div class="flex h-full items-center justify-center text-center">
             <div>
-                <p class="text-9xl font-bold text-white/70">Under Maintenance</p>
+                <p class="text-5xl font-bold text-white/70 ">Under Maintenance</p>
                 <p class="mt-6 mb-20 text-2xl text-white/50">We will be right back<br><span class="opacity-40 text-[1rem]">Miss me bebe gurl ?</span></p>
             </div>
         </div>

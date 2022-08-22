@@ -99,8 +99,4 @@ Route::get('admin/logs/{date}/download', [AdminController::class, 'download'])->
 Route::get('admin/logs/{date}/{level}', [AdminController::class, 'showByLevel'])->name('log-viewer::logs.filter');
 Route::get('admin/logs/{date}/{level}/search', [AdminController::class, 'search'])->name('log-viewer::logs.search');
 
-Route::get('test', function () {
-    Log::info("test");
-});
-
 require __DIR__ . '/auth.php';
