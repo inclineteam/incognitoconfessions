@@ -3,6 +3,7 @@
     <div class="mb-10 flex flex-col md:flex-row-reverse md:justify-between justify-center items-center border-b border-zinc-800/50 pb-6
     
     ">
+
         <div x-data="{ sortDropdown: false }" class="relative flex mr-0 md:mr-4">
             <button @click="sortDropdown = !sortDropdown"
                 x-bind:class="sortDropdown ? 'bg-zinc-800/30' : 'hover:bg-zinc-800/30'"

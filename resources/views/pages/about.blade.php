@@ -13,10 +13,25 @@
                     @endif
                 </div>
             </div>
-            <p class="text-white">
-                This is the about page.
+            <section class="responsive-padding relative mx-auto w-full max-w-4xl py-8 text-white">
+            <h1 class="font-medium text-4xl text-start py-6">About Us</h1>
+            <p class="text-3xl text-justify font-extralight">
+                Our mission is to provide a platform for
+                people to vent out there feelings in incognito mode!
+                <br> <br>
+                Share your weirdest and darkest secrets anonymously,
+                and receive feedbacks from other users.
             </p>
-
+            <br><br>
+            <p class="text-3xl text-start font-extralight">
+                Moreover, Incognito Confessions is a Laravel test and starter built by
+                Incline Start-up Agency for future team project.
+                Testing Git and framework functions.
+                <br> <br>
+                In addition, anyone is open to use this laravel template for
+                personal and commercial use.
+            </p>
+        </section>
         </div>
     </div>
 </x-layout>

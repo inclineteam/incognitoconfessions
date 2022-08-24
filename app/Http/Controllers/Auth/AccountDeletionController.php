@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class AccountDeletionController extends Controller
@@ -47,5 +48,25 @@ class AccountDeletionController extends Controller
         $user->delete();
 
         return redirect('/');
+    }
+
+    public function ban(Request $request){
+
+        $user = $request->validate([
+            'ban' => ['required'],
+        ]);
+
+        DB::table('users')->where("id", $user['ban'])->update(['banned' => true]);
+        return redirect()->back();
+    }
+
+    public function unban(Request $request){
+
+        $user = $request->validate([
+            'ban' => ['required'],
+        ]);
+
+        DB::table('users')->where("id", $user['ban'])->update(['banned' => false]);
+        return redirect()->back();
     }
 }

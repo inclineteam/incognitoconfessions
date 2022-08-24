@@ -109,6 +109,12 @@ npm run dev
 php artisan serve
 ```
 
+## Maintenance mode
+```
+php artisan down --render="errors::maintenance" // maintenance mode
+php artisan up // disable maintenance mode
+```
+
 ## Authors
 
 -   Percival Ian Muico
@@ -117,25 +123,41 @@ php artisan serve
 
 ## Version History
 
--   0.6
+-   v0.0.9
+    - Privacy Policy, Terms of Service, About Page and Cookie policy
+    - Added maintenance template 
+
+-   v0.0.8
+    - Admin Panel
+    - Adsense Containers
+    - GPDR cookie compliance
+
+-   v0.0.7
+    - Replies and React Feature
+    - Anti spam reply
+
+-   v0.0.6
     -   Added security ( #Recaptcha )
     -   Download Confessions Letter Image
--   0.5
 
+-   v0.0.5
     -   Create, Update, and Delete Confessions
 
--   0.4
+-   v0.0.4
     -   Authentication
     -   Added Home Dashboard and Confessions Page
     -   Search bar
--   0.3
+
+-   v0.0.3
     -   Added card components
     -   Changed default landing page
--   0.2
+
+-   v0.0.2
     -   Laravel framework installation
     -   Tailwind CSS installation
     -   Landing page initial commit
--   0.1
+
+-   v0.0.1
     -   Initial build
 
 ## License

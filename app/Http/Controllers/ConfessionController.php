@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 
 class ConfessionController extends Controller
@@ -21,14 +22,14 @@ class ConfessionController extends Controller
     public function index(Request $request)
     {
 
+        $confessions = Cache::remember('confession', 30, function () {
+            return Confession::latest()->filter(request(['search']))->paginate(15);
+        });
+
         if($request->cookie('laravel_cookie_consent') == null){
             // do not let user in if cookie consent is not accepted
             return Redirect::to('/cookie');
         }
-        
-        $confessions = Cache::remember('confession', 30, function () {
-            return Confession::latest()->filter(request(['search']))->paginate(15);
-        });
 
         // if there is sort query in request, sort the items, else, get latest items
         if (request('sort')) {
@@ -85,6 +86,9 @@ class ConfessionController extends Controller
             'reacts_users' => $reacts_users,
         ]);
 
+        // Log
+        Log::info('User ' . auth()->user()->name . ' reacted to confession ' . $confession->id);
+
         return redirect()->back();
     }
 
@@ -113,6 +117,9 @@ class ConfessionController extends Controller
             'user_id' => auth()->user()->id,
             'content' => $request->content,
         ]);
+
+        // Log
+        Log::info('User '.auth()->user()->name.' replied to confession '. $confession->id);
 
         return Redirect::to('/confessions/' . $confession->id . "#comment");
     }
@@ -145,7 +152,7 @@ class ConfessionController extends Controller
 
             $limit = ConfessionLimit::where("user_id", auth()->user()->id)->first();
 
-            if ($limit->confessions_count >= 100) {
+            if ($limit->confessions_count >= 50) {
                 // ban
                 DB::table('users')->where("id", auth()->user()->id)->update(['banned' => true]);
 
@@ -168,7 +175,8 @@ class ConfessionController extends Controller
             ]);
         }
 
-        // add Log
+        // Log
+        Log::info('User ' . auth()->user()->name . ' created a confession');
 
         return redirect()->route('home');
     }
@@ -177,8 +185,6 @@ class ConfessionController extends Controller
     {
         $confession = Confession::find($id);
         $confession->delete();
-
-        // add Log
 
         return redirect()->route('home');
     }
