@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Redirect;
 
 class PasswordResetLinkController extends Controller
 {
@@ -13,8 +14,12 @@ class PasswordResetLinkController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
+    public function create(Request $request)
     {
+        if($request->cookie('laravel_cookie_consent') == null){
+            // do not let user in if cookie consent is not accepted
+            return Redirect::to('/cookie');
+        }
         return view('pages.auth.forgot-password');
     }
 

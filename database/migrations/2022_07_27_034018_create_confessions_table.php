@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string("name");
             $table->string("to");
             $table->longText("content");
+            // number of reacts
+            $table->integer("reacts")->default(0);
+            $table->json("reacts_users")->nullable();
             // id of confesser
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
