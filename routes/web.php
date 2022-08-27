@@ -6,7 +6,6 @@ use App\Http\Controllers\ConfessionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\UpdateCredentialsController;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
