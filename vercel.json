@@ -20,7 +20,9 @@
         "VIEW_COMPILED_PATH": "/tmp",
 
         "CACHE_DRIVER": "array",
-        "LOG_CHANNEL": "stderr",
+        "LOG_CHANNEL": "daily",
+        "LOG_DEPRECATIONS_CHANNEL": "null",
+        "LOG_LEVEL": "debug",
         "SESSION_DRIVER": "cookie"
     }
 }
