@@ -6,13 +6,13 @@
         <div class="flex flex-col items-center justify-center mx-auto">
             <div class="col-md-6 flex flex-col flex-wrap w-[80%] col-lg-9">
             
-                <div class="flex w-[100%] justify-center">
+                {{-- <div class="flex w-[100%] justify-center">
                     <hr class="w-[100%] opacity-40 p-5">
-                </div>
-                <div class="flex justify-center">
+                </div> --}}
+                {{-- <div class="flex justify-center">
                     <p class="p-4 text-white ml-9 text-[1.5rem]">Logs Info</p>
-                </div>
-                <div class="flex flex-wrap justify-center gap-5">
+                </div> --}}
+                {{-- <div class="flex flex-wrap justify-center gap-5">
                     @foreach($percents as $level => $item)
                         <div class="flex justify-center items-center">
                             <div class="text-white flex flex-col rounded-lg bg-zinc-800 w-[20rem] justify-center items-center h-[10rem]">
@@ -26,7 +26,7 @@
                             </div>
                         </div>
                     @endforeach
-                </div>
+                </div> --}}
                 <div class="flex flex-col pt-5 pb-5">
                     <div class="flex w-[100%] mt-10 justify-center">
                         <hr class="w-[100%] opacity-40 p-5">
