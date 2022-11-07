@@ -6,7 +6,6 @@ use App\Http\Controllers\ConfessionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\UpdateCredentialsController;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -92,11 +91,11 @@ Route::delete('delete-account/{user}', [AccountDeletionController::class, 'delet
 
 Route::get('admin', [AdminController::class, 'index'])->name('admin');
 Route::get('admin/dashboard', [AdminController::class, 'index'])->name('log-viewer::dashboard');
-Route::get('admin/logs', [AdminController::class, 'listLogs'])->name('log-viewer::logs.list');
-Route::delete('admin/logs/delete', [AdminController::class, 'delete'])->name('log-viewer::logs.delete');
-Route::get('admin/logs/{date}', [AdminController::class, 'show'])->name('log-viewer::logs.show');
-Route::get('admin/logs/{date}/download', [AdminController::class, 'download'])->name('log-viewer::logs.download');
-Route::get('admin/logs/{date}/{level}', [AdminController::class, 'showByLevel'])->name('log-viewer::logs.filter');
-Route::get('admin/logs/{date}/{level}/search', [AdminController::class, 'search'])->name('log-viewer::logs.search');
+// Route::get('admin/logs', [AdminController::class, 'listLogs'])->name('log-viewer::logs.list');
+// Route::delete('admin/logs/delete', [AdminController::class, 'delete'])->name('log-viewer::logs.delete');
+// Route::get('admin/logs/{date}', [AdminController::class, 'show'])->name('log-viewer::logs.show');
+// Route::get('admin/logs/{date}/download', [AdminController::class, 'download'])->name('log-viewer::logs.download');
+// Route::get('admin/logs/{date}/{level}', [AdminController::class, 'showByLevel'])->name('log-viewer::logs.filter');
+// Route::get('admin/logs/{date}/{level}/search', [AdminController::class, 'search'])->name('log-viewer::logs.search');
 
 require __DIR__ . '/auth.php';

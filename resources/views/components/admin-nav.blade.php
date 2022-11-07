@@ -7,7 +7,7 @@
             <span class="font-[Quicksand]">Incognito</span>
         </a>
         
-        <div class="collapse hidden space-x-12 font-medium sm:block navbar-collapse" id="navbarNav">
+        {{-- <div class="collapse hidden space-x-12 font-medium sm:block navbar-collapse" id="navbarNav">
             <ul class="navbar-nav flex mr-auto">
                 <li class="nav-item mr-10 {{ Route::is('log-viewer::dashboard') ? 'active' : '' }}">
                     <a href="{{ route('log-viewer::dashboard') }}" class="nav-link">
@@ -20,7 +20,7 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </div> --}}
 
         <button @click="mobileNavDropdown = true" class="block sm:hidden">
             <i class="ai-three-line-horizontal text-2xl"></i>

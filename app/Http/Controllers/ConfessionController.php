@@ -87,7 +87,7 @@ class ConfessionController extends Controller
         ]);
 
         // Log
-        Log::info('User ' . auth()->user()->name . ' reacted to confession ' . $confession->id);
+        //Log::info('User ' . auth()->user()->name . ' reacted to confession ' . $confession->id);
 
         return redirect()->back();
     }
@@ -119,7 +119,7 @@ class ConfessionController extends Controller
         ]);
 
         // Log
-        Log::info('User '.auth()->user()->name.' replied to confession '. $confession->id);
+        //Log::info('User '.auth()->user()->name.' replied to confession '. $confession->id);
 
         return Redirect::to('/confessions/' . $confession->id . "#comment");
     }
@@ -176,7 +176,7 @@ class ConfessionController extends Controller
         }
 
         // Log
-        Log::info('User ' . auth()->user()->name . ' created a confession');
+        //Log::info('User ' . auth()->user()->name . ' created a confession');
 
         return redirect()->route('home');
     }
